@@ -11,6 +11,16 @@ axios.get("http://localhost:3000/posts?_expand=user&_limit=5")
         console.log(error);
     })
 
+// Click - Enter post page
+indexDbTbody.addEventListener("click", e => {
+    if(e.target.classList.contains("post__link")) {
+        e.preventDefault();
+        keyPostId = e.target.dataset.postId;
+        localStorage.setItem("postId", keyPostId);
+        location.href = "../html/post.html";
+    }
+});
+
 // Function - Render discussion board table
 function renderDbTable(data) {
     indexDbTbody.innerHTML = data.map(i => {
@@ -20,14 +30,14 @@ function renderDbTable(data) {
                     ${i.language}
                 </td>
                 <td class="col-1">
-                    <a class="d-block" href="#">
-                    <img class="d-block mx-auto my-auto"
+                    <a class="d-block" href="../html/post.html">
+                    <img class="post__link d-block mx-auto my-auto"
                     src=${i.thumbnailImg}
-                    alt="${i.title}">
+                    alt="${i.title}" data-post-id="${i.id}">
                     </a>
                 </td>
                 <td class="col-6">
-                    <a class="d-block" href="${i.url}">
+                    <a class="post__link d-block" href="../html/post.html" data-post-id="${i.id}">
                         ${i.title}
                     </a>
                     <span class="d-block fs-7">
