@@ -1,0 +1,29 @@
+.banner {
+
+    &__carousel-caption {
+        position: absolute;
+        bottom: 10px;
+
+        @include media-breakpoint-up(sm) {
+            top: 10px;
+        }
+    }
+
+    &__caption-text {
+        width: fit-content;
+    }
+
+    
+}
+
+.tab-pane {
+    &__img-container {
+        max-width: 100%;
+        max-height: 280px;
+    }
+
+    &__img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

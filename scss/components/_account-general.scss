@@ -1,0 +1,17 @@
+.acc-general {
+    &__btn--point:hover {
+        cursor: pointer;
+    } 
+}
+
+.btn--add {
+    &:hover {
+        color: $primary;
+    }
+}
+
+.btn--delete {
+    &:hover {
+        color: $danger;
+    }
+}

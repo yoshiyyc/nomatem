@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOMATEM - The Friendliest Language Platform</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/all.css">
+</head>
+
+<body>
+    <header>
+        <nav class="header__navbar navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container d-flex align-items-center">
+                <h1 class="me-3 mb-0">
+                    <a class="logo navbar-brand d-block mx-auto" href="../html/index.html">
+                        NOMATEM
+                    </a>
+                </h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-dark my-4 my-md-0" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-0 ms-md-2 me-md-auto my-0">
+                        <li class="nav-item mx-md-1">
+                            <a class="header__nav-link nav-link py-3 py-md-2 text-center border border-md-0"
+                                href="../html/discussion-board.html">
+                                Discussion Board
+                            </a>
+                        </li>
+                        <li class="nav-item mx-md-1">
+                            <a class="header__nav-link nav-link py-3 py-md-2 text-center border border-md-0"
+                                href="../html/language-friends.html">
+                                Language Friends
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="navbarAccount"
+                        class="navbar-nav d-flex flex-column flex-md-row flex-md-row-reverse align-items-md-center">
+                        <div class="nav-item d-flex flex-column flex-md-row flex-md-row-reverse mx-md-1">
+                            <a class="btn btn-outline-tertiary mx-md-2 my-0 py-3 py-md-2 rounded-0 rounded-md"
+                                href="../html/login.html" role="button">
+                                Log In
+                            </a>
+                            <a class="btn btn-secondary mx-md-2 my-0 py-3 py-md-2 rounded-0 rounded-md"
+                                href="../html/register.html" role="button">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="dropdown mx-md-4">
+                            <a class="btn btn-light btn-sm dropdown-toggle my-0 py-3 py-md-1 w-100 rounded-0 rounded-md"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Language
+                            </a>
+                            <ul class="dropdown-menu p-0 rounded-0 rounded-md border">
+                                <li>
+                                    <a class="dropdown-item active py-3 py-sm-2 border border-md-0" aria-current="true"
+                                        href="../html/index.html">
+                                        English
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item py-3 py-sm-2 border border-md-0" href="#">
+                                        Chinese
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container-md py-4 py-sm-5">
+                <div class="col-4 col-sm-2 col-lg-1">
+                    <a class="btn btn-outline-tertiary d-flex justify-content-center align-items-center py-2 text-tertiary link-light shadow-sm"
+                        href="../html/discussion-board.html">
+                        <i class="bi bi-arrow-bar-left me-2"></i>
+                        Back
+                    </a>
+                </div>
+                <form class="container mx-auto my-4 mb-sm-5">
+                    <div class="row mx-auto mb-4">
+                        <p class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
+                            Reply To
+                        </p>
+                        <div class="col-12 col-sm-9 col-md-10">
+                            <div id="opArea" class="p-3 bg-light">
+                                <p class="mb-0 fw-bold">
+                                    Howdy
+                                </p>
+                                <hr>
+                                <p>
+                                    Hi, I would like to share my trip to Seattle. It’s so wonderful and bla bla. This is
+                                    awweessomeeeeee. Anyone wants to come with me together?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mx-auto mb-4">
+                        <p class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
+                            Language
+                        </p>
+                        <p id="postLanguage" class="col-12 col-sm-9 col-md-10">
+                            English
+                        </p>
+                    </div>
+                    <div class="row mx-auto mb-4">
+                        <label for="newPostContent" class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
+                            Content
+                        </label>
+                        <div class="col-12 col-sm-9 col-md-10">
+                            <textarea id="commentContent" class="form-control d-block" rows="10"
+                                placeholder="Enter your comment"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mx-auto mb-4">
+                        <div class="col-12 col-sm-9 col-md-10 offset-sm-3 offset-md-2">
+                            <div class="form-check">
+                                <input id="commentAgreement" class="form-check-input" type="checkbox">
+                                <label for="newPostAgreement" class="form-check-label">
+                                    I have agreed to the
+                                    <a href="">
+                                        Forum Rules<!--
+                                 --></a><!--
+                                 -->.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mx-auto mt-5 mb-3">
+                        <div class="col-12 col-sm-9 col-md-10 offset-sm-3 offset-md-2">
+                            <button id="btnCreateComment" class="col-12 col-sm-5 col-md-3 btn btn-primary d-block py-2" type="submit">
+                                Reply
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark">
+        <div class="container-md px-4 px-sm-5 py-4 text-light">
+            <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
+                <h1 class="h5 mb-4 mb-md-0">
+                    <a class="logo logo--footer text-decoration-none d-block" href="#">
+                        NOMATEM
+                    </a>
+                </h1>
+                <ul
+                    class="col-12 col-md-9 list-unstyled d-flex flex-column flex-sm-row justify-content-between justify-content-md-around">
+                    <li class="mb-4 mb-sm-0">
+                        <h5>
+                            About Us
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="footer__link link-light" href="../html/about.html">
+                                    What is NOMATEM?
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mb-4 mb-sm-0">
+                        <h5>
+                            Services
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="footer__link link-light" href="../html/discussion-board.html">
+                                    Discussion Board
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link link-light" href="../html/language-friends.html">
+                                    Language Friends
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mb-4 mb-sm-0">
+                        <h5>
+                            Social Media
+                        </h5>
+                        <ul class="list-unstyled d-flex justify-content-start justify-content-sm-between">
+                            <li class="mx-2 mx-sm-0">
+                                <a class="text-decoration-none d-block link-light" href="#" target="_blank">
+                                    <i class="sns__icon bi bi-facebook d-block fs-3"></i>
+                                </a>
+                            </li>
+                            <li class="mx-2 mx-sm-0">
+                                <a class="text-decoration-none d-block link-light" href="#" target="_blank">
+                                    <i class="sns__icon bi bi-twitter d-block fs-3"></i>
+                                </a>
+                            </li>
+                            <li class="mx-2 mx-sm-0">
+                                <a class="text-decoration-none d-block link-light" href="#" target="_blank">
+                                    <i class="sns__icon bi bi-instagram d-block fs-3"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <p class="mb-0">
+                    Copyright © NOMATEM 2022
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module">
+        import * as mixedImport from "../js/all.js";
+
+        mixedImport.updateNavbar();
+    </script>
+    <script src="../js/reply-post.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+.logo {
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 50px;
+    min-width: 150px;
+    background-image:url(../../img/NOMATEM_Logo_Long.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &--footer {
+        background-position: 0% 0%;
+    }
+  }

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOMATEM - The Friendliest Language Platform</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/all.css">
+</head>
+
+<body>
+    <header>
+        <nav class="header__navbar navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container d-flex align-items-center">
+                <h1 class="me-3 mb-0">
+                    <a class="logo navbar-brand d-block mx-auto" href="../html/index.html">
+                        NOMATEM
+                    </a>
+                </h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-dark my-4 my-md-0" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-0 ms-md-2 me-md-auto my-0">
+                        <li class="nav-item mx-md-1">
+                            <a class="header__nav-link nav-link py-3 py-md-2 text-center border border-md-0"
+                                href="../html/discussion-board.html">
+                                Discussion Board
+                            </a>
+                        </li>
+                        <li class="nav-item mx-md-1">
+                            <a class="header__nav-link nav-link py-3 py-md-2 text-center border border-md-0"
+                                href="../html/language-friends.html">
+                                Language Friends
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="navbarAccount"
+                        class="navbar-nav d-flex flex-column flex-md-row flex-md-row-reverse align-items-md-center">
+                        <div class="nav-item d-flex flex-column flex-md-row flex-md-row-reverse mx-md-1">
+                            <a class="btn btn-outline-tertiary mx-md-2 my-0 py-3 py-md-2 rounded-0 rounded-md"
+                                href="../html/login.html" role="button">
+                                Log In
+                            </a>
+                            <a class="btn btn-secondary mx-md-2 my-0 py-3 py-md-2 rounded-0 rounded-md"
+                                href="../html/register.html" role="button">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="dropdown mx-md-4">
+                            <a class="btn btn-light btn-sm dropdown-toggle my-0 py-3 py-md-1 w-100 rounded-0 rounded-md"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Language
+                            </a>
+                            <ul class="dropdown-menu p-0 rounded-0 rounded-md border">
+                                <li>
+                                    <a class="dropdown-item active py-3 py-sm-2 border border-md-0" aria-current="true"
+                                        href="../html/index.html">
+                                        English
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item py-3 py-sm-2 border border-md-0" href="#">
+                                        Chinese
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="bg-primary">
+            <div
+                class="container-md d-flex flex-column flex-sm-row justify-content-sm-between align-items-center p-4 py-sm-5">
+                <div class="col-12 col-sm-5 mb-4 mb-sm-0">
+                    <h2 class="display-5 fw-bold text-center text-sm-start text-white">
+                        NOMATEM
+                        <br>
+                        <span class="h3 d-block mt-3">
+                            Discussion Board
+                        </span>
+                    </h2>
+                </div>
+                <div class="col-12 col-sm-7 d-flex flex-column justify-content-center text-white">
+                    <ul class="lh-lg">
+                        <li>
+                            Post and join a topic anytime with a language of your choice
+                        </li>
+                        <li>
+                            Start learning your Nth language in a language passionate discussion board
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container-md my-4 my-sm-5">
+                <div class="row d-flex mb-5 g-3 gy-4 g-md-3">
+                    <div class="col-12 col-sm-4 col-md-3">
+                        <select id="dbLanguageSelect" class="btn btn-tertiary d-block py-3 py-sm-2 w-100 shadow-sm">
+                            <option value="All">
+                                All Languages
+                            </option>
+                            <option value="EN">
+                                English
+                            </option>
+                            <option value="CH">
+                                Chinese
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-sm-8 col-md-6 position-relative">
+                        <input id="discussionSearchbar"
+                            class="d-block ps-3 pe-5 py-3 py-sm-2 h-100 w-100 border border-dark shadow-sm" type="text"
+                            name="discussionSearchbar">
+                        <i class="searchbar__btn bi bi-search position-absolute top-50 end-0 translate-middle-y me-4"></i>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-3">
+                        <a id="btnPost" class="btn btn-secondary d-block py-3 py-md-2 w-100 shadow-sm"
+                            href="../html/create-post.html" role="button">
+                            <i class="bi bi-pencil-square me-1"></i>
+                            Post
+                        </a>
+                    </div>
+                </div>
+                <div class="table-responsive my-5">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr class="text-white bg-primary">
+                                <th class="col-9 px-3" colspan="3" scope="col">
+                                    Announcements
+                                </th>
+                                <th class="col-1 text-center" scope="col">
+                                    <i class="bi bi-eye-fill d-block"></i>
+                                </th>
+                                <th class="col-1 text-center" scope="col">
+                                    <i class="bi bi-chat-dots-fill d-block"></i>
+                                </th>
+                                <th class="col-1 text-center" scope="col">
+                                    <i class="bi bi-clock-fill d-block"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="dbbody">
+                            <tr>
+                                <td class="col-1 text-center">
+                                    <i class="bi bi-megaphone-fill d-block"></i>
+                                </td>
+                                <td class="col-1">
+                                    <a class="d-block" href="">
+                                        <img class="d-block w-100"
+                                            src="https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                                            alt="This is a forum announcement">
+                                    </a>
+                                </td>
+                                <td class="col-6">
+                                    <a class="d-block" href="">
+                                        This is a forum announcement
+                                    </a>
+                                    <span class="d-block fs-7">
+                                        yoshiele
+                                    </span>
+                                </td>
+                                <td class="col-1 text-center fs-7">
+                                    666
+                                </td>
+                                <td class="col-1 text-center fs-7">
+                                    50
+                                </td>
+                                <td class="col-1 text-center fs-7">
+                                    2022/10/31
+                                    10:30pm
+                                </td>
+                            </tr>
+                            <tr class="dbbody__row">
+                                <td class="col-1 text-center">
+                                    <i class="bi bi-megaphone-fill d-block"></i>
+                                </td>
+                                <td class="col-1">
+                                    <a class="d-block" href="">
+                                        <img class="d-block w-100"
+                                            src="https://images.unsplash.com/photo-1483546416237-76fd26bbcdd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                                            alt="版規">
+                                    </a>
+                                </td>
+                                <td class="col-6">
+                                    <a class="d-block" href="">
+                                        版規
+                                    </a>
+                                    <span class="d-block fs-7">
+                                        yoshiele
+                                    </span>
+                                </td>
+                                <td class="col-1 text-center fs-7">
+                                    666
+                                </td>
+                                <td class="col-1 text-center fs-7">
+                                    50
+                                </td>
+                                <td class="col-1 text-center fs-7">
+                                    2022/10/31
+                                    10:30pm
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-responsive my-5">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr class="text-light bg-primary">
+                                <th class="px-3 col-9" colspan="3" scope="col">
+                                    Discussion
+                                </th>
+                                <th class="col-1 text-center" scope="col">
+                                    <i class="bi bi-eye-fill d-block"></i>
+                                </th>
+                                <th class="col-1 text-center" scope="col">
+                                    <i class="bi bi-chat-dots-fill d-block"></i>
+                                </th>
+                                <th class="col-1 text-center" scope="col">
+                                    <i class="bi bi-clock-fill d-block"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="dbTbody" class="dbbody">
+
+                        </tbody>
+                    </table>
+                </div>
+                <nav class="my-5" aria-label="Discussion Board Pages">
+                    <ul class="pagination d-flex justify-content-center justify-content-sm-end mb-0">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark">
+        <div class="container-md px-4 px-sm-5 py-4 text-light">
+            <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
+                <h1 class="h5 mb-4 mb-md-0">
+                    <a class="logo logo--footer text-decoration-none d-block" href="#">
+                        NOMATEM
+                    </a>
+                </h1>
+                <ul
+                    class="col-12 col-md-9 list-unstyled d-flex flex-column flex-sm-row justify-content-between justify-content-md-around">
+                    <li class="mb-4 mb-sm-0">
+                        <h5>
+                            About Us
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="footer__link link-light" href="../html/about.html">
+                                    What is NOMATEM?
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mb-4 mb-sm-0">
+                        <h5>
+                            Services
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="footer__link link-light" href="../html/discussion-board.html">
+                                    Discussion Board
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer__link link-light" href="../html/language-friends.html">
+                                    Language Friends
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mb-4 mb-sm-0">
+                        <h5>
+                            Social Media
+                        </h5>
+                        <ul class="list-unstyled d-flex justify-content-start justify-content-sm-between">
+                            <li class="mx-2 mx-sm-0">
+                                <a class="text-decoration-none d-block link-light" href="#" target="_blank">
+                                    <i class="sns__icon bi bi-facebook d-block fs-3"></i>
+                                </a>
+                            </li>
+                            <li class="mx-2 mx-sm-0">
+                                <a class="text-decoration-none d-block link-light" href="#" target="_blank">
+                                    <i class="sns__icon bi bi-twitter d-block fs-3"></i>
+                                </a>
+                            </li>
+                            <li class="mx-2 mx-sm-0">
+                                <a class="text-decoration-none d-block link-light" href="#" target="_blank">
+                                    <i class="sns__icon bi bi-instagram d-block fs-3"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <p class="mb-0">
+                    Copyright © NOMATEM 2022
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module">
+        import * as mixedImport from "../js/all.js";
+
+        mixedImport.updateNavbar();
+    </script>
+    <script src="../js/discussion-board.js"></script>
+</body>
+
+</html>

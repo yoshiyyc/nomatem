@@ -1,0 +1,19 @@
+.header {
+    &__navbar {
+        z-index: 1000;
+        min-height: 60px;
+    }
+
+    &__nav-link {
+        color: white;
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+
+    &__avatar {
+        width: 45px;
+        height: 45px;
+    }
+}

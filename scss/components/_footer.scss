@@ -1,0 +1,17 @@
+.footer {
+    &__link {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.sns {
+    &__icon {
+        &:hover {
+            color: $secondary;
+        }
+    }
+}
