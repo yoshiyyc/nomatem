@@ -1,25 +1,26 @@
-const inputLearn = document.querySelector("inputLearn");
-const inputTeach = document.querySelector("inputTeach");
+const inputLearn = document.querySelector("#inputLearn");
+const inputTeach = document.querySelector("#inputTeach");
 const btnFilter = document.querySelector("#btnFilter");
 const friendsList = document.querySelector("#friendsList");
 
-let data;
+let lfData;
 
 axios.get("http://localhost:3000/friends?_expand=user&_sort=updatedTime&_order=desc")
 .then(response => {
-    data = response.data;
-    console.log(data);
-    renderFriendsList();
+    lfData = response.data;
+    console.log(lfData);
+    renderFriendsList(lfData);
 })
 .catch(error => {
     console.log(error);
 })
 
 btnFilter.addEventListener("click", e => {
-    filterLanguage;
+    e.preventDefault();
+    filterLanguage();
 });
 
-function renderFriendsList() {
+function renderFriendsList(data) {
     friendsList.innerHTML = data.map(i => {
         return `
             <li class="col">
@@ -94,7 +95,29 @@ function renderLanguage(data) {
 } 
 
 function filterLanguage() {
-    
+    let languageList;
+
+    languageList = lfData.filter(i => {
+        let hasSpeak = false;
+        let hasLearn = false;
+
+        i.user.speak.forEach(j => {
+            if (inputLearn.value === j.language || inputLearn.value === "All") {
+                hasSpeak = true;
+            }
+        })
+
+        i.user.learn.forEach(j => {
+            if (j.language === inputTeach.value || inputTeach.value === "All") {
+                hasLearn = true;
+            }
+        })
+
+        return hasSpeak && hasLearn;
+    })
+
+    console.log("a", languageList);
+    renderFriendsList(languageList);
 }
 
 
