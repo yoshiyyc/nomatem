@@ -6,8 +6,8 @@ const btnReply = document.querySelector(".btn--reply");
 let token = localStorage.getItem("token");
 let postId = localStorage.getItem("postId");
 
-let isLoggedIn = false;
-token ? isLoggedIn = true : isLoggedIn = false;
+let isLoggedIn;
+localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
 
 let postData;
 
@@ -141,14 +141,14 @@ function renderReply() {
 function renderLanguage(data) {
     return data.map(i => {
         return `
-        <li class="d-flex flex-column flex-lg-row mb-1 mb-lg-0">
-        <p class="col mb-0 px-3 text-lg-end fs-7">
-            ${i.language}
-        </p>
-        <p class="col mb-0 px-3 fs-7">
-            ${i.level}
-        </p>
-    </li>
+            <li class="d-flex flex-column flex-lg-row mb-1 mb-lg-0">
+                <p class="col mb-0 px-3 text-lg-end fs-7">
+                    ${i.language}
+                </p>
+                <p class="col mb-0 px-3 fs-7">
+                    ${i.level}
+                </p>
+            </li>
         `;
         }).join("");
 } 

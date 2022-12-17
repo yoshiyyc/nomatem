@@ -113,11 +113,17 @@
                                 I want to learn
                             </label>
                             <select id="inputLearn" class="form-select">
-                                <option selected>
+                                <option value="All">
+                                    All Languages
+                                </option>
+                                <option value="EN">
                                     English
                                 </option>
-                                <option>
+                                <option value="CH">
                                     Chinese
+                                </option>
+                                <option value="JP">
+                                    Japanese
                                 </option>
                             </select>
                         </div>
@@ -126,16 +132,22 @@
                                 I can teach
                             </label>
                             <select id="inputTeach" class="form-select">
-                                <option>
+                                <option value="All">
+                                    All Languages
+                                </option>
+                                <option value="EN">
                                     English
                                 </option>
-                                <option selected>
+                                <option value="CH">
                                     Chinese
+                                </option>
+                                <option calue="JP">
+                                    Japanese
                                 </option>
                             </select>
                         </div>
                         <div class="col-12 col-md-2 d-flex justify-content-center align-items-end my-3 my-md-0">
-                            <button class="btn btn-primary d-block py-3 py-sm-2 w-100 shadow-sm" type="submit">
+                            <button id="btnFilter" class="btn btn-primary d-block py-3 py-sm-2 w-100 shadow-sm" type="submit">
                                 <i class="bi bi-search me-1"></i>
                                 Search
                             </button>

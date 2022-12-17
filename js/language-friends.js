@@ -1,18 +1,26 @@
+const inputLearn = document.querySelector("inputLearn");
+const inputTeach = document.querySelector("inputTeach");
+const btnFilter = document.querySelector("#btnFilter");
 const friendsList = document.querySelector("#friendsList");
 
-let friendsData;
+let data;
 
-axios.get("http://localhost:3000/friends?_expand=user")
+axios.get("http://localhost:3000/friends?_expand=user&_sort=updatedTime&_order=desc")
 .then(response => {
-    friendsData = response.data;
+    data = response.data;
+    console.log(data);
     renderFriendsList();
 })
 .catch(error => {
     console.log(error);
 })
 
+btnFilter.addEventListener("click", e => {
+    filterLanguage;
+});
+
 function renderFriendsList() {
-    friendsList.innerHTML = friendsData.map(i => {
+    friendsList.innerHTML = data.map(i => {
         return `
             <li class="col">
                 <div class="card h-100 border-primary shadow-sm">
@@ -21,7 +29,7 @@ function renderFriendsList() {
                             <i class="bi bi-heart d-block"></i>
                         </button>
                         <h5 class="text-center my-auto">
-                            ${i.user.languageFriend.displayName}
+                            ${i.displayName}
                         </h5>
                         <button class="text-white bg-transparent border-0">
                             <i class="bi bi-three-dots-vertical d-block"></i>
@@ -32,41 +40,20 @@ function renderFriendsList() {
                             <div class="col-6 col-sm-5 d-flex justify-content-center align-items-center my-2 my-sm-0">
                                 <div class="avatar__img-container">
                                     <img class="avatar__img friends__avatar d-block border rounded-circle"
-                                src="${i.user.languageFriend.avatar}" alt="${i.user.languageFriend.displayName}">
+                                src="${i.avatar}" alt="${i.displayName}">
                                 </div>
                             </div>
                             <p class="col-12 col-sm-7 friends__summary px-2 mb-0">
-                                ${i.user.languageFriend.summary}
+                                ${i.summary}
                             </p>
                         </div>
-                        <div class="row d-flex flex-column flex-md-row justify-content-start justify-content-md-between align-items-start py-2">
+                        <div class="row d-flex flex-column flex-md-row justify-content-start justify-content-md-between align-items-start pt-2 pb-3">
                             <div class="col my-1 my-md-0">
                                 <p class="mb-0 fw-semibold">
                                     Speak
                                 </p>
                                 <ul class="list-unstyled">
-                                    <li class="d-flex">
-                                        <p class="col me-1 mb-0 fs-7">
-                                            English
-                                        </p>
-                                        <p class="col mb-0 fs-7">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                        </p>
-                                    </li>
-                                    <li class="d-flex">
-                                        <p class="col me-1 mb-0 fs-7">
-                                            Portuguese
-                                        </p>
-                                        <p class="col mb-0 fs-7">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star"></i>
-                                        </p>
-                                    </li>
+                                    ${renderLanguage(i.user.speak)}
                                 </ul>
                             </div>
                             <div class="col my-1 my-md-0">
@@ -74,37 +61,45 @@ function renderFriendsList() {
                                     Learning
                                 </p>
                                 <ul class="list-unstyled">
-                                    <li class="d-flex">
-                                        <p class="col me-1 mb-0 fs-7">
-                                            Chinese
-                                        </p>
-                                        <p class="col mb-0 fs-7">
-                                            <i class="bi bi-star-fill"></i>
-                                            <i class="bi bi-star-fill"></i>
-                                        </p>
-                                    </li>
-                                    <li class="d-flex">
-                                        <p class="col me-1 mb-0 fs-7">
-                                            German
-                                        </p>
-                                        <p class="col mb-0 fs-7">
-                                            <i class="bi bi-star-fill"></i>
-                                        </p>
-                                    </li>
+                                    ${renderLanguage(i.user.learn)}
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer btn-group d-flex flex-column flex-sm-row p-0 bg-transparent border-0 rounded-0" role="group" aria-label="Language Friends Buttons">
-                        <a class="col col-sm-6 btn btn-tertiary d-block py-3 py-sm-2 border-0 rounded-0 rounded-bottom-start-sm" href="../html/friends-profile.html">
+                        <a class="col col-sm-6 btn btn-secondary d-block py-3 py-sm-2 border-0 rounded-0 rounded-bottom-start-sm" href="../html/friends-profile.html">
                             Profile
                         </a>
-                        <button class="col col-sm-6 btn btn-secondary d-block py-3 py-sm-2 border-0 rounded-0 rounded-bottom rounded-sm-0 rounded-bottom-end-sm" type="button">
-                            Connect
-                        </button>
                     </div>
                 </div>
             </li>
         `;
     }).join("");
 }
+
+// Function - Create new language
+function renderLanguage(data) {
+    return data.map(i => {
+        return `
+            <li class="d-flex">
+                <p class="col me-1 mb-0 fs-7">
+                    ${i.language}
+                </p>
+                <p class="col mb-0 fs-7">
+                    ${i.level}
+                </p>
+            </li>
+        `;
+        }).join("");
+} 
+
+function filterLanguage() {
+    
+}
+
+
+/* Connect button
+<button class="col col-sm-6 btn btn-secondary d-block py-3 py-sm-2 border-0 rounded-0 rounded-bottom rounded-sm-0 rounded-bottom-end-sm" type="button">
+    Connect
+</button>
+*/

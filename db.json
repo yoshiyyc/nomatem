@@ -1,325 +1,151 @@
 {
   "posts": [
     {
-      "id": "p1",
+      "id": "p16712614340821",
       "url": "#",
       "title": "Howdy",
-      "userId": "u4",
+      "userId": "u16712607768993",
       "language": "EN",
-      "postTime": 1671095803828,
-      "updatedTime": 1671095831639,
-      "viewNum": 4,
-      "commentNum": 1,
-      "thumbnailImg": "../img/undraw_nature_m5ll.svg",
-      "content": "Hey y'all, I am Yoshi.\n\nNice to meet y'all!\n\nAnyone wants to be friend?",
-      "comments": []
-    },
-    {
-      "id": "p2",
-      "url": "#",
-      "title": "請問為什麼 university 的前面要放 a，不是放 an？",
-      "userId": "u4",
-      "language": "CH",
-      "postTime": 1671096808699,
-      "updatedTime": 1671096808699,
+      "postTime": 1671261434082,
+      "updatedTime": 1671261434082,
       "viewNum": 0,
       "commentNum": 0,
-      "thumbnailImg": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      "content": "如題，有誰知道為什麼嗎？",
-      "comments": []
-    },
-    {
-      "id": "p3",
-      "url": "#",
-      "title": "Anyone knows if I should put an s  to the verb after anyone?",
-      "userId": "u5",
-      "language": "EN",
-      "postTime": 1671097819517,
-      "updatedTime": 1671097819517,
-      "viewNum": 1,
-      "commentNum": 0,
-      "thumbnailImg": "https://images.unsplash.com/photo-1484069560501-87d72b0c3669?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      "content": "I have been thinking this for a while. Anyone can help me out?",
-      "comments": []
-    },
-    {
-      "id": "p4",
-      "url": "#",
-      "title": "美國最好玩的州是？",
-      "userId": "u5",
-      "language": "CH",
-      "postTime": 1671098054554,
-      "updatedTime": 1671098054554,
-      "viewNum": 0,
-      "commentNum": 0,
-      "thumbnailImg": "https://images.unsplash.com/flagged/photo-1551202669-c93b712e7553?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-      "content": "我想要下個月去美國玩\n有推薦的地方嗎？",
-      "comments": []
-    },
-    {
-      "id": "p5",
-      "url": "#",
-      "title": " I would like to visit Taiwan",
-      "userId": "u4",
-      "language": "EN",
-      "postTime": 1671098309265,
-      "updatedTime": 1671098309265,
-      "viewNum": 0,
-      "commentNum": 0,
-      "thumbnailImg": "../img/undraw_nature_m5ll.svg",
-      "content": "Sounds like a great plan right?\nI need people to give suggestions for please to go and food to eat.",
-      "comments": []
-    },
-    {
-      "id": "p6",
-      "url": "#",
-      "title": "我第一次用中文發文",
-      "userId": "u5",
-      "language": "CH",
-      "postTime": 1671098529695,
-      "updatedTime": 1671098529695,
-      "viewNum": 1,
-      "commentNum": 0,
-      "thumbnailImg": "https://images.unsplash.com/photo-1501436513145-30f24e19fcc8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
-      "content": "請多多指教",
+      "thumbnailImg": "https://images.unsplash.com/photo-1652584466378-2c7313730d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+      "content": "Hi, nice to meet you all!",
       "comments": []
     }
   ],
-  "comments": [
-    {
-      "id": "c1",
-      "postId": "p1",
-      "userId": "u4",
-      "commentTime": 1671095831631,
-      "content": "Love to be friend with you!"
-    }
-  ],
+  "comments": [],
   "friends": [
     {
-      "id": "f1",
-      "userId": "u1"
+      "id": "f16712604298241",
+      "userId": "u16712604298241",
+      "isPublish": true,
+      "updatedTime": 1671260919863,
+      "displayName": "ILoveYou",
+      "avatar": "../img/undraw_nature_m5ll.svg",
+      "contact": [],
+      "summary": "",
+      "interest": "",
+      "goals": "",
+      "preferences": ""
     },
     {
-      "id": "f2",
-      "userId": "u2"
+      "id": "f16712604856472",
+      "userId": "u16712604856472",
+      "isPublish": true,
+      "updatedTime": 1671260501867,
+      "displayName": "user2",
+      "avatar": "../img/undraw_nature_m5ll.svg",
+      "contact": [],
+      "summary": "",
+      "interest": "",
+      "goals": "",
+      "preferences": ""
     },
     {
-      "id": "f3",
-      "userId": "u3"
+      "id": "f16712607768993",
+      "userId": "u16712607768993",
+      "isPublish": true,
+      "updatedTime": 1671261872825,
+      "displayName": "San",
+      "avatar": "https://images.unsplash.com/photo-1613279060105-b851f33ca66b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+      "contact": [
+        {
+          "contactId": 1671261161294,
+          "method": "Email",
+          "account": "333@gmailcom"
+        }
+      ],
+      "summary": "Hi everyone, I am 33. Nice to meet y'all.",
+      "interest": "Culinary",
+      "goals": "Learn more languages and cooking",
+      "preferences": "Anyone!"
     }
   ],
   "users": [
     {
-      "id": "u1",
-      "firstName": "Adam",
-      "lastName": "Smith",
-      "email": "adam@gmail.com",
-      "password": "123456",
-      "speak": [
-        {
-          "language": "English",
-          "level": 4
-        },
-        {
-          "language": "Portuguese",
-          "level": 3
-        }
-      ],
-      "learn": [
-        {
-          "language": "Chinese",
-          "level": 2
-        },
-        {
-          "language": "Vietnamese",
-          "level": 1
-        }
-      ],
-      "db": {
-        "username": "adamsmith",
-        "avatar": "https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-      },
-      "languageFriend": {
-        "isPublish": true,
-        "displayName": "Adam Smith",
-        "avatar": "https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-        "contact": [
-          {
-            "method": "email",
-            "account": "adam@gmail.com"
-          }
-        ],
-        "summary": "I am passionate about language learning. It’ll be great if anyone’s interested in doing an English-Japanese language exchange.",
-        "interest": "Cuisines, photography",
-        "goals": "I want to be able to speak Japanese fluently, so that maybe one day I can work in Japan.",
-        "preference": "I am looking for someone who is around my age (20+), and will be great if we share the same hobbies!",
-        "invitation": [
-          "u2",
-          "u3"
-        ],
-        "bookmarked": [
-          "u2",
-          "u3"
-        ],
-        "friends": [
-          "u4",
-          "u5"
-        ]
-      }
-    },
-    {
-      "id": "u2",
-      "firstName": "Bob",
-      "lastName": "Uko",
-      "email": "stk@gmail.com",
-      "password": "123456",
-      "speak": [
-        {
-          "language": "English",
-          "level": 4
-        },
-        {
-          "language": "Portuguese",
-          "level": 3
-        }
-      ],
-      "learn": [
-        {
-          "language": "Chinese",
-          "level": 2
-        },
-        {
-          "language": "Vietnamese",
-          "level": 1
-        }
-      ],
-      "db": {
-        "username": "sdjalkj",
-        "avatar": "https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-      },
-      "languageFriend": {
-        "isPublish": true,
-        "displayName": "sdjalkj",
-        "avatar": "https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-        "contact": [
-          {
-            "method": "email",
-            "account": "sdjalkj@gmail.com"
-          }
-        ],
-        "summary": "Nice to meet you!",
-        "interest": "Reading",
-        "goals": "Learn more languages",
-        "preference": "Looking for a collge friend",
-        "invitation": [
-          "u4",
-          "u3"
-        ],
-        "bookmarked": [
-          "u1",
-          "u3"
-        ],
-        "friends": [
-          "u4",
-          "u5"
-        ]
-      }
-    },
-    {
-      "id": "u3",
-      "firstName": "西",
-      "lastName": "田",
-      "email": "tianxi@gmail.com",
-      "password": "123456",
-      "speak": [
-        {
-          "language": "English",
-          "level": 4
-        },
-        {
-          "language": "Portuguese",
-          "level": 3
-        }
-      ],
-      "learn": [
-        {
-          "language": "Chinese",
-          "level": 2
-        },
-        {
-          "language": "Vietnamese",
-          "level": 1
-        }
-      ],
-      "db": {
-        "username": "angel",
-        "avatar": "https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-      },
-      "languageFriend": {
-        "isPublish": true,
-        "displayName": "天使",
-        "avatar": "https://images.unsplash.com/photo-1458966480358-a0ac42de0a7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-        "contact": [
-          {
-            "method": "email",
-            "account": "angel@gmail.com"
-          }
-        ],
-        "summary": "大家好，I am Angel. Love to eat ice cream",
-        "interest": "Cuisines, photography",
-        "goals": "NA",
-        "preference": "Let's chat!",
-        "invitation": [
-          "u2",
-          "u1"
-        ],
-        "bookmarked": [
-          "u2",
-          "u1"
-        ],
-        "friends": [
-          "u4",
-          "u5"
-        ]
-      }
-    },
-    {
       "email": "111@gmail.com",
-      "password": "$2a$10$YxOA7NW3OAM3G6br6Zc0c.EIj9ctjhDyCijElPzF8jlnq/ML0t8au",
-      "id": "u4",
-      "firstName": "Yoshi",
-      "lastName": "Y",
+      "password": "$2a$10$oOkxIB/GBGgjjfDdes2mqOfhXR.JXOFFwmvgqXLUOttp9uS/mLwZy",
+      "id": "u16712604298241",
+      "firstName": "Ichi",
+      "lastName": "One",
+      "speak": [],
+      "learn": [],
+      "db": {
+        "username": "user1",
+        "avatar": "../img/undraw_nature_m5ll.svg"
+      },
+      "lf": {
+        "isPublish": false,
+        "updatedTime": 1671260429824,
+        "displayName": "user1",
+        "avatar": "../img/undraw_nature_m5ll.svg",
+        "contact": [],
+        "summary": "",
+        "interest": "",
+        "goals": "",
+        "preferences": ""
+      }
+    },
+    {
+      "email": "222@gmail.com",
+      "password": "$2a$10$RihyRTbUmwBy/2DWcUrNRuqB.FMGVUXSc5bXOoKQNjBEssjDCAzuy",
+      "id": "u16712604856472",
+      "firstName": "小二",
+      "lastName": "龍",
+      "speak": [],
+      "learn": [],
+      "db": {
+        "username": "user2",
+        "avatar": "../img/undraw_nature_m5ll.svg"
+      },
+      "lf": {
+        "isPublish": false,
+        "updatedTime": 1671260485647,
+        "displayName": "user2",
+        "avatar": "../img/undraw_nature_m5ll.svg",
+        "contact": [],
+        "summary": "",
+        "interest": "",
+        "goals": "",
+        "preferences": ""
+      }
+    },
+    {
+      "email": "333@gmail.com",
+      "password": "$2a$10$hSI6KWpNJ.LFBWMD6TqdruMNEIz1FDil3jawvKG0S2e4SsFK.i3C6",
+      "id": "u16712607768993",
+      "firstName": "San",
+      "lastName": "Three",
       "speak": [
         {
+          "speakId": 1671261215890,
           "language": "English",
           "level": "★★★★"
-        },
-        {
-          "language": "Chinese",
-          "level": "★★★"
         }
       ],
-      "db": {
-        "username": "yoshiele",
-        "avatar": "https://images.unsplash.com/photo-1500576992153-0271099def59?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"
-      },
       "learn": [
         {
+          "learnId": 1671261215890,
           "language": "Chinese",
           "level": "★★"
         }
-      ]
-    },
-    {
-      "email": "222@email.com",
-      "password": "$2a$10$Tf3PPf2Ta0us2918UK7jFOmOmi.pxFpu/pjY8QoliOc8q4mFTrPYS",
-      "id": "u5",
-      "firstName": "Adam",
-      "lastName": "Smith",
-      "speak": [],
+      ],
       "db": {
-        "username": "user5",
+        "username": "user3",
         "avatar": "../img/undraw_nature_m5ll.svg"
+      },
+      "lf": {
+        "isPublish": false,
+        "updatedTime": 1671260776899,
+        "displayName": "user3",
+        "avatar": "../img/undraw_nature_m5ll.svg",
+        "contact": [],
+        "summary": "",
+        "interest": "",
+        "goals": "",
+        "preferences": ""
       }
     }
   ]

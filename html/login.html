@@ -87,19 +87,25 @@
                         <h4 class="mb-4 text-center">
                             Log In
                         </h4>
-                        <form class="mx-auto p-3 w-100 bg-light border">
+                        <form id="loginForm" class="mx-auto p-3 w-100 bg-light border">
                             <div class="mb-3">
                                 <label for="loginEmail" class="form-label">
                                     Email address
                                 </label>
-                                <input id="loginEmail" class="form-control" type="email" aria-describedby="loginEmail">
+                                <input id="loginEmail" class="form-control" name="loginEmail" type="email" aria-describedby="loginEmail">
+                                <p class="loginInfo-message fs-7 text-danger" data-message="loginEmail">
+                                    
+                                </p>
                             </div>
                             <div class="mb-3">
                                 <label for="loginPassword" class="form-label">
                                     Password
                                 </label>
-                                <input id="loginPassword" class="form-control" type="password">
-                                <a class="d-block link-danger fs-7" href="../html/forgot-password.html">
+                                <input id="loginPassword" class="form-control" name="loginPassword" type="password">
+                                <p class="loginInfo-message fs-7 text-danger" data-message="loginPassword">
+                                    
+                                </p>
+                                <a class="d-block link-primary fs-7" href="../html/forgot-password.html">
                                     Forgot your password?
                                 </a>
                             </div>
@@ -199,6 +205,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script type="module">
         import * as mixedImport from "../js/all.js";
 

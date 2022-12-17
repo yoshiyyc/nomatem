@@ -101,12 +101,14 @@
                                     Language Friends Profile
                                 </a>
                             </li>
+                            <!--
                             <li class="nav-item btn btn-outline-primary p-0">
                                 <a class="nav-link d-block py-3 link-light text-primary"
                                     href="../html/account-friends-management.html">
                                     Language Friends Management
                                 </a>
                             </li>
+                            -->
                         </ul>
                     </nav>
                     <div class="col-9 px-5 py-3">
@@ -114,16 +116,18 @@
                             <h4 class="mb-3">
                                 Discussion Board Profile
                             </h4>
-                            <form class="gx-5 gy-3 mb-5">
+                            <form id="dbForm" class="gx-5 gy-3 mb-5">
                                 <div class="row d-flex align-items-center my-2">
                                     <div class="col-5">
                                         <label for="dbUsername" class="form-label">
                                             Username
                                         </label>
-                                        <input id="dbUsername" class="form-control" type="text">
+                                        <input id="dbUsername" class="form-control" name="dbUsername" type="text">
+                                        <p class="dbInfo-message fs-7 text-danger" data-message="dbUsername">
+                                    
+                                        </p>
                                     </div>
-                                    <div
-                                        class="col-3 d-flex flex-column justify-content-center align-items-center mx-auto">
+                                    <div class="col-3 d-flex flex-column justify-content-center align-items-center mx-auto">
                                         <div class="avatar__img-container d-flex">
                                             <div class="border rounded-circle">
                                                 <img id="dbAvatar" class="avatar__img d-block rounded-circle"
@@ -131,18 +135,12 @@
                                                     alt="Avatar">
                                             </div>
                                         </div>
-                                        <!--
-                                        <button class="btn btn-light d-block mx-auto my-3 px-3 py-2 border"
-                                            type="button">
-                                            Edit Avatar
-                                        </button>
-                                        -->
                                         <div class="form-floating mx-auto my-3">
                                             <input id="dbAvatarInput" type="text" class="form-control" placeholder="Image URL" value="">
-                                            <label for="dbAvatarInput">
+                                            <label for="dbAvatarInput" class="opacity-50">
                                                 Image URL
                                             </label>
-                                          </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row my-2">
@@ -235,6 +233,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script type="module">
         import * as mixedImport from "../js/all.js";
 

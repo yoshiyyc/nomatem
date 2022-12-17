@@ -4,10 +4,28 @@ export let token = localStorage.getItem("token");
 export let userId = localStorage.getItem("userId");
 
 export let data;
-export let isLoggedIn = false;
+
+export function checkLoggedIn() {
+    axios.get(`http://localhost:3000/600/users/${userId}`, {
+        headers: {
+            "authorization": `Bearer ${token}`,
+        }
+    })
+        .then(response => {
+            localStorage.setItem("isLoggedIn", true);
+        })
+        .catch(error => {
+            console.log(error);
+            if(error.response.data === "jwt expired" || error.response.data === 
+            "Missing token") {
+                localStorage.setItem("isLoggedIn", false);
+            }
+        })
+}
 
 export function updateNavbar() {
-    token ? isLoggedIn = true : isLoggedIn = false;
+    let isLoggedIn;
+    localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
 
     if (isLoggedIn) {
         axios.get(`http://localhost:3000/600/users/${userId}`, {
@@ -58,9 +76,23 @@ export function updateNavbar() {
     }
     */
 
+    /*
+    deleteFriend("f167125961598010");
+
+    function deleteFriend(id) {
+        axios.delete(`http://localhost:3000/friends/${id}`)
+            .then(response => {
+            console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+    }
+    */
+
 
     /*
-    deleteUser("u4");
+    deleteUser("u16712396833441");
 
     function deleteUser(id) {
         axios.delete(`http://localhost:3000/users/${id}`)
@@ -72,6 +104,7 @@ export function updateNavbar() {
     })
     }
     */
+    
 
 }
 
@@ -131,5 +164,6 @@ export function logoutAction() {
     localStorage.setItem("userId", "");
     userId = "";
 
+    checkLoggedIn();
     location.href = "../html/index.html";
 }

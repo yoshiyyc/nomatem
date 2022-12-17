@@ -9,8 +9,8 @@ let token = localStorage.getItem("token");
 let dbData;
 let keyPostId;
 
-let isLoggedIn = false;
-token ? isLoggedIn = true : isLoggedIn = false;
+let isLoggedIn;
+localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
 
 axios.get("http://localhost:3000/posts?_expand=user&_sort=updatedTime&_order=desc")
     .then(response => {

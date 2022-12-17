@@ -86,46 +86,41 @@
                         Back
                     </a>
                 </div>
-                <form class="container mx-auto my-4 mb-sm-5">
-                    <div class="row mx-auto mb-4">
+                <form id="commentForm" class="container mx-auto my-4 mb-sm-5">
+                    <div class="row mx-auto mb-3">
                         <p class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
                             Reply To
                         </p>
                         <div class="col-12 col-sm-9 col-md-10">
                             <div id="opArea" class="p-3 bg-light">
-                                <p class="mb-0 fw-bold">
-                                    Howdy
-                                </p>
-                                <hr>
-                                <p>
-                                    Hi, I would like to share my trip to Seattle. It’s so wonderful and bla bla. This is
-                                    awweessomeeeeee. Anyone wants to come with me together?
-                                </p>
+                                
                             </div>
                         </div>
                     </div>
-                    <div class="row mx-auto mb-4">
+                    <div class="row mx-auto mb-3">
                         <p class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
                             Language
                         </p>
                         <p id="postLanguage" class="col-12 col-sm-9 col-md-10">
-                            English
+                            
                         </p>
                     </div>
-                    <div class="row mx-auto mb-4">
-                        <label for="newPostContent" class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
+                    <div class="row mx-auto mb-3">
+                        <label for="commentContent" class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
                             Content
                         </label>
                         <div class="col-12 col-sm-9 col-md-10">
-                            <textarea id="commentContent" class="form-control d-block" rows="10"
-                                placeholder="Enter your comment"></textarea>
+                            <textarea id="commentContent" class="form-control d-block" name="commentContent" rows="10" placeholder="Enter your comment"></textarea>
+                            <p class="commentInfo-message fs-7 text-danger" data-message="commentContent">
+                                
+                            </p>
                         </div>
                     </div>
-                    <div class="row mx-auto mb-4">
+                    <div class="row mx-auto mb-3">
                         <div class="col-12 col-sm-9 col-md-10 offset-sm-3 offset-md-2">
                             <div class="form-check">
-                                <input id="commentAgreement" class="form-check-input" type="checkbox">
-                                <label for="newPostAgreement" class="form-check-label">
+                                <input id="commentAgreement" class="form-check-input" name="commentAgreement" type="checkbox">
+                                <label for="commentAgreement" class="form-check-label">
                                     I have agreed to the
                                     <a href="">
                                         Forum Rules<!--
@@ -133,6 +128,9 @@
                                  -->.
                                 </label>
                             </div>
+                            <p class="commentInfo-message fs-7 text-danger" data-message="commentAgreement">
+                                
+                            </p>
                         </div>
                     </div>
                     <div class="row mx-auto mt-5 mb-3">
@@ -222,6 +220,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script type="module">
         import * as mixedImport from "../js/all.js";
 

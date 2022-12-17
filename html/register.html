@@ -87,33 +87,42 @@
                         <h4 class="mb-4 text-center">
                             Register
                         </h4>
-                        <form class="mx-auto p-3 w-100 bg-light border">
+                        <form id="registerForm" class="mx-auto p-3 w-100 bg-light border">
                             <div class="mb-3">
                                 <label for="registerFName" class="form-label">
                                     First Name
                                 </label>
-                                <input id="registerFName" class="form-control" type="text"
-                                    aria-describedby="registerFName">
+                                <input id="registerFName" class="form-control" type="text" name="registerFName" aria-describedby="registerFName">
+                                <p class="registerInfo-message fs-7 text-danger" data-message="registerFName">
+                                    
+                                </p>
                             </div>
                             <div class="mb-3">
                                 <label for="registerLName" class="form-label">
                                     Last Name
                                 </label>
-                                <input id="registerLName" class="form-control" type="text"
-                                    aria-describedby="registerLName">
+                                <input id="registerLName" class="form-control" name="registerLName" type="text" aria-describedby="registerLName">
+                                <p class="registerInfo-message fs-7 text-danger" data-message="registerLName">
+                                    
+                                </p>
                             </div>
                             <div class="mb-3">
                                 <label for="registerEmail" class="form-label">
                                     Email Address
                                 </label>
-                                <input id="registerEmail" class="form-control" type="email"
-                                    aria-describedby="registerEmail">
+                                <input id="registerEmail" class="form-control" type="email" name="registerEmail" aria-describedby="registerEmail">
+                                <p class="registerInfo-message fs-7 text-danger" data-message="registerEmail">
+                                    
+                                </p>
                             </div>
                             <div class="mb-3">
                                 <label for="registerPassword" class="form-label">
                                     Password
                                 </label>
-                                <input id="registerPassword" class="form-control" type="password">
+                                <input id="registerPassword" class="form-control" name="registerPassword" type="password">
+                                <p class="registerInfo-message fs-7 text-danger" data-message="registerPassword">
+                                    
+                                </p>
                             </div>
                             <button id="registerBtn" class="col-12 btn btn-primary d-block mx-auto ms-md-auto mt-5 py-2"
                                 type="submit">
@@ -211,6 +220,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script type="module">
         import * as mixedImport from "../js/all.js";
 

@@ -101,12 +101,14 @@
                                     Language Friends Profile
                                 </a>
                             </li>
+                            <!--
                             <li class="nav-item btn btn-outline-primary p-0">
                                 <a class="nav-link d-block py-3 link-light text-primary"
                                     href="../html/account-friends-management.html">
                                     Language Friends Management
                                 </a>
                             </li>
+                            -->
                         </ul>
                     </nav>
                     <div class="col-9 px-5 py-3">
@@ -114,39 +116,50 @@
                             <h4 class="mb-3">
                                 General
                             </h4>
-                            <form class="gx-5 gy-3">
-                                <div class="row my-2">
+                            <form id="generalForm" class="g-3">
+                                <div class="row my-3">
                                     <div class="col-5">
                                         <label for="generalFName" class="form-label">
                                             First Name
                                         </label>
-                                        <input id="generalFName" class="form-control" type="text">
+                                        <input id="generalFName" class="form-control" name="generalFName" type="text">
+                                        <p class="generalInfo-message fs-7 text-danger" data-message="generalFName">
+                                    
+                                        </p>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-5 offset-1">
                                         <label for="generalLName" class="form-label">
                                             Last name
                                         </label>
-                                        <input id="generalLName" class="form-control" type="text">
+                                        <input id="generalLName" class="form-control" name="generalLName" type="text">
+                                        <p class="generalInfo-message fs-7 text-danger" data-message="generalLName">
+                                    
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="row my-2">
+                                <div class="row my-3">
                                     <div class="col-5">
                                         <label for="generalEmail" class="form-label">
                                             Email
                                         </label>
-                                        <input id="generalEmail" class="form-control" type="email">
+                                        <input id="generalEmail" class="form-control" name="generalEmail" type="email">
+                                        <p class="generalInfo-message fs-7 text-danger" data-message="generalEmail">
+                                    
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="row my-2">
+                                <div class="row my-3">
                                     <div class="col-5">
                                         <label for="generalPassword" class="form-label">
                                             Password
                                         </label>
-                                        <input id="generalPassword" class="form-control" type="password"
-                                            placeholder="Password change">
+                                        <input id="generalPassword" class="form-control" name="generalPassword" type="password" placeholder="Password change">
+                                        <p class="generalInfo-message fs-7 text-danger" data-message="generalPassword">
+                                    
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="row my-2">
+                                <div class="row my-3">
                                     <div class="col-3 mt-5">
                                         <button id="btnUpdateGeneral" class="btn btn-primary d-block py-2 w-100"
                                             type="submit">
@@ -172,7 +185,7 @@
                                     <ul id="speakBody" class="list-unstyled">
                                         <li id="speak1" class="speak__item row d-flex align-items-center my-3">
                                             <div class="col-5">
-                                                <select id="generalSpeak1" class="form-select generalSpeak__select">
+                                                <select id="generalSpeak1" class="form-select">
                                                     <option selected disabled>
                                                         Choose a language
                                                     </option>
@@ -186,7 +199,7 @@
                                             </div>
                                             <div class="col-5">
                                                 <select id="speakLevel1" class="form-select">
-                                                    <option selected disabled>
+                                                    <option selected disabled value="">
                                                         Choose a level
                                                     </option>
                                                     <option>
@@ -206,21 +219,21 @@
                                             <div class="col-1 mx-auto">
                                                 <i class="btn--delete acc-general__btn--point bi bi-x-circle d-block h5 mb-0 p-0 text-center" data-id="speak1"></i>
                                             </div>
-                                        </li>                            
+                                        </li>   
                                     </ul>
                                 </div>
                                 <div class="mb-5">
                                     <div class="d-flex align-items-center my-2">
                                         <h5 class="mb-0">
                                             Learning
-                                            <i id="btnLearn" class="acc-general__btn--add btn--add bi bi-plus-circle ms-3"></i>
+                                            <i id="btnLearn" class="acc-general__btn--point btn--add bi bi-plus-circle ms-3"></i>
                                         </h5>
                                     </div>
                                     <ul id="learnBody" class="list-unstyled">
                                         <li id="learn1" class="learn__item row d-flex align-items-center my-3">
                                             <div class="col-5">
                                                 <select id="generalLearn1" class="form-select generalLearn__select">
-                                                    <option selected disabled>
+                                                    <option selected disabled value="">
                                                         Choose a language
                                                     </option>
                                                     <option>
@@ -233,7 +246,7 @@
                                             </div>
                                             <div class="col-5">
                                                 <select id="learnLevel1" class="form-select">
-                                                    <option selected disabled>
+                                                    <option selected disabled value="">
                                                         Choose a level
                                                     </option>
                                                     <option>
@@ -344,6 +357,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script type="module">
         import * as mixedImport from "../js/all.js";
 

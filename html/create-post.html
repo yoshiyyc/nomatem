@@ -86,14 +86,14 @@
                         Back
                     </a>
                 </div>
-                <form class="container mx-auto my-4 mb-sm-5">
-                    <div class="row mx-auto mb-4">
+                <form id="newPostForm" class="container mx-auto my-4 mb-sm-5">
+                    <div class="row mx-auto mb-3">
                         <label for="newPostLanguage" class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
                             Language
                         </label>
                         <div class="col-12 col-sm-5 col-md-3">
-                            <select id="newPostLanguage" class="form-select" aria-label="New Post Language Select">
-                                <option selected disabled>
+                            <select id="newPostLanguage" class="form-select" name="newPostLanguage" aria-label="New Post Language Select">
+                                <option selected disabled value="">
                                     Language
                                 </option>
                                 <option value="EN">
@@ -103,39 +103,49 @@
                                     Chinese
                                 </option>
                             </select>
+                            <p class="createPostInfo-message fs-7 text-danger" data-message="newPostLanguage">
+                                
+                            </p>
                         </div>
                     </div>
-                    <div class="row mx-auto mb-4">
+                    <div class="row mx-auto mb-3">
                         <label for="newPostTitle" class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
                             Title
                         </label>
                         <div class="col-12 col-sm-9 col-md-10">
-                            <input id="newPostTitle" class="form-control d-block" type="text"
-                                placeholder="Enter your post title">
+                            <input id="newPostTitle" class="form-control d-block" name="newPostTitle" type="text" placeholder="Enter your post title">
+                            <p class="createPostInfo-message fs-7 text-danger" data-message="newPostTitle">
+                                
+                            </p>
                         </div>
                     </div>
-                    <div class="row mx-auto mb-4">
+                    <div class="row mx-auto mb-3">
                         <label for="newPostThumbnail" class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
                             Thumbnail URL
                         </label>
                         <div class="col-12 col-sm-9 col-md-10">
-                            <input id="newPostThumbnail" class="form-control d-block" type="text"
-                                placeholder="Enter the url for your post thumbnail">
+                            <input id="newPostThumbnail" class="form-control d-block" name="newPostThumbnail" type="text" placeholder="Enter the url for your post thumbnail">
+                            <p class="createPostInfo-message fs-7 text-danger" data-message="newPostThumbnail">
+                                
+                            </p>
+                            
                         </div>
                     </div>
-                    <div class="row mx-auto mb-4">
+                    <div class="row mx-auto mb-3">
                         <label for="newPostContent" class="col-12 col-sm-3 col-md-2 col-form-label d-block pe-4 text-sm-end fw-bold">
                             Content
                         </label>
                         <div class="col-12 col-sm-9 col-md-10">
-                            <textarea id="newPostContent" class="form-control d-block" rows="10"
-                                placeholder="Enter your post content"></textarea>
+                            <textarea id="newPostContent" class="form-control d-block" name="newPostContent" rows="10" placeholder="Enter your post content"></textarea>
+                            <p class="createPostInfo-message fs-7 text-danger" data-message="newPostContent">
+                                
+                            </p>
                         </div>
                     </div>
-                    <div class="row mx-auto mb-4">
+                    <div class="row mx-auto mb-3">
                         <div class="col-12 col-sm-9 col-md-10 offset-sm-3 offset-md-2">
                             <div class="form-check">
-                                <input id="newPostAgreement" class="form-check-input" type="checkbox">
+                                <input id="newPostAgreement" class="form-check-input" name="newPostAgreement" type="checkbox">
                                 <label for="newPostAgreement" class="form-check-label">
                                     I have agreed to the
                                     <a href="">
@@ -144,6 +154,9 @@
                                  -->.
                                 </label>
                             </div>
+                            <p class="createPostInfo-message fs-7 text-danger" data-message="newPostAgreement">
+                                
+                            </p>
                         </div>
                     </div>
                     <div class="row mx-auto mt-5 mb-3">
@@ -233,9 +246,10 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script type="module">
         import * as mixedImport from "../js/all.js";
-
+        mixedImport.checkLoggedIn();
         mixedImport.updateNavbar();
     </script>
     <script src="../js/create-post.js"></script>
