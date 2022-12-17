@@ -70,8 +70,20 @@
       "id": "u16712604298241",
       "firstName": "Ichi",
       "lastName": "One",
-      "speak": [],
-      "learn": [],
+      "speak": [
+        {
+          "speakId": 1671268076411,
+          "language": "English",
+          "level": "★★★"
+        }
+      ],
+      "learn": [
+        {
+          "learnId": 1671268076411,
+          "language": "Chinese",
+          "level": "★★★"
+        }
+      ],
       "db": {
         "username": "user1",
         "avatar": "../img/undraw_nature_m5ll.svg"
@@ -94,8 +106,20 @@
       "id": "u16712604856472",
       "firstName": "小二",
       "lastName": "龍",
-      "speak": [],
-      "learn": [],
+      "speak": [
+        {
+          "speakId": 1671268054401,
+          "language": "Chinese",
+          "level": "★★★★"
+        }
+      ],
+      "learn": [
+        {
+          "learnId": 1671268054401,
+          "language": "English",
+          "level": "★"
+        }
+      ],
       "db": {
         "username": "user2",
         "avatar": "../img/undraw_nature_m5ll.svg"
