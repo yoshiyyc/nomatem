@@ -90,7 +90,6 @@ export function updateNavbar() {
     }
     */
 
-
     /*
     deleteUser("u16712864814564");
 
