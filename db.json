@@ -7,9 +7,9 @@
       "userId": "u16712607768993",
       "language": "EN",
       "postTime": 1671261434082,
-      "updatedTime": 1671321988975,
-      "viewNum": 20,
-      "commentNum": 3,
+      "updatedTime": 1671345477667,
+      "viewNum": 28,
+      "commentNum": 6,
       "thumbnailImg": "https://images.unsplash.com/photo-1652584466378-2c7313730d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
       "content": "Hi, nice to meet you all!",
       "comments": []
@@ -22,7 +22,7 @@
       "language": "EN",
       "postTime": 1671320616276,
       "updatedTime": 1671321563951,
-      "viewNum": 4,
+      "viewNum": 6,
       "commentNum": 2,
       "thumbnailImg": "https://images.unsplash.com/photo-1603205431143-ce58f21799a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
       "content": "How do you say the sentence in Chinese?\nIs it 我學中文?",
@@ -35,9 +35,9 @@
       "userId": "u16712604856472",
       "language": "CH",
       "postTime": 1671320987051,
-      "updatedTime": 1671321630769,
-      "viewNum": 2,
-      "commentNum": 1,
+      "updatedTime": 1671343845656,
+      "viewNum": 5,
+      "commentNum": 2,
       "thumbnailImg": "https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       "content": "我個人覺得是英文\n因為英文畢竟全世界都通用\n不過感覺母語是中文的話比較吃香\n好像有聽過蠻多外國朋友說學中文很難\n如果母語不是中文的話感覺要額外學習很多字",
       "comments": []
@@ -49,9 +49,9 @@
       "userId": "u16713007847384",
       "language": "CH",
       "postTime": 1671321517338,
-      "updatedTime": 1671321517338,
-      "viewNum": 0,
-      "commentNum": 0,
+      "updatedTime": 1671345461192,
+      "viewNum": 4,
+      "commentNum": 2,
       "thumbnailImg": "../img/undraw_nature_m5ll.svg",
       "content": "如題，這問題已經困擾我很久了\nuniversity 的前面是 u，不是應該是放 an 嗎？",
       "comments": []
@@ -78,10 +78,66 @@
       "language": "CH",
       "postTime": 1671322451803,
       "updatedTime": 1671322451803,
-      "viewNum": 0,
+      "viewNum": 1,
       "commentNum": 0,
       "thumbnailImg": "https://pbs.twimg.com/media/FiUGcguWIAERREn?format=jpg&name=large",
       "content": "我自己感覺多少有學到一點\n語感之類的（加一些可能沒那麼實用的單字w）\n\n順帶一提明年七月咒術迴戰二期要開播啦！",
+      "comments": []
+    },
+    {
+      "id": "p16713440333327",
+      "url": "#",
+      "title": "國外留學的首選是？",
+      "userId": "u16713435264178",
+      "language": "CH",
+      "postTime": 1671344033332,
+      "updatedTime": 1671344033332,
+      "viewNum": 0,
+      "commentNum": 0,
+      "thumbnailImg": "https://images.unsplash.com/20/cambridge.JPG?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1447&q=80",
+      "content": "我聽說美國比較好\n也有人說英國比較好\n你們覺得呢？還是說有什麼黑馬？",
+      "comments": []
+    },
+    {
+      "id": "p16713448872198",
+      "url": "#",
+      "title": "英語勉強したい人ホイホイ",
+      "userId": "u167134458066310",
+      "language": "JP",
+      "postTime": 1671344887219,
+      "updatedTime": 1671344887219,
+      "viewNum": 0,
+      "commentNum": 0,
+      "thumbnailImg": "https://images.unsplash.com/photo-1596180316165-0974ef954468?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+      "content": "一緒に勉強しよぜ",
+      "comments": []
+    },
+    {
+      "id": "p16713451045399",
+      "url": "#",
+      "title": "Hello World",
+      "userId": "u16713020911437",
+      "language": "EN",
+      "postTime": 1671345104539,
+      "updatedTime": 1671345104539,
+      "viewNum": 0,
+      "commentNum": 0,
+      "thumbnailImg": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+      "content": "Would you guys consider learning coding as learning a language?\n\nI personally will say no but my friend says its similar",
+      "comments": []
+    },
+    {
+      "id": "p167134542603310",
+      "url": "#",
+      "title": "Need help on translating lyrics",
+      "userId": "u16713435264178",
+      "language": "EN",
+      "postTime": 1671345426033,
+      "updatedTime": 1671345426033,
+      "viewNum": 0,
+      "commentNum": 0,
+      "thumbnailImg": "https://plus.unsplash.com/premium_photo-1668418188837-d40b734ed6d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "content": "Anyone knows any good website for lyrics translation?\nI really need it!",
       "comments": []
     }
   ],
@@ -176,6 +232,48 @@
       "userId": "u16713015929915",
       "commentTime": 1671321988958,
       "content": "Nice to meet you too!"
+    },
+    {
+      "id": "c167134384562914",
+      "postId": "p16713209870513",
+      "userId": "u16713435264178",
+      "commentTime": 1671343845629,
+      "content": "韓文一票"
+    },
+    {
+      "id": "c167134448725415",
+      "postId": "p16713215173384",
+      "userId": "u16713440964109",
+      "commentTime": 1671344487254,
+      "content": "因為 university 的 u 念「優」不念「啊」\n念「啊」才要放 an"
+    },
+    {
+      "id": "c167134451918416",
+      "postId": "p16712614340821",
+      "userId": "u16713440964109",
+      "commentTime": 1671344519184,
+      "content": "I am new to the site. Nice to meet you!"
+    },
+    {
+      "id": "c167134491873217",
+      "postId": "p16712614340821",
+      "userId": "u167134458066310",
+      "commentTime": 1671344918732,
+      "content": "Hihi"
+    },
+    {
+      "id": "c167134546117118",
+      "postId": "p16713215173384",
+      "userId": "u16713435264178",
+      "commentTime": 1671345461171,
+      "content": "樓上說得沒錯"
+    },
+    {
+      "id": "c167134547764519",
+      "postId": "p16712614340821",
+      "userId": "u16713435264178",
+      "commentTime": 1671345477645,
+      "content": "Oh yeah"
     }
   ],
   "friends": [
@@ -304,6 +402,63 @@
       "interest": "Learning Japanese",
       "goals": "Get N1",
       "preferences": "Someone I can speak Japanese with"
+    },
+    {
+      "id": "f16713435264178",
+      "userId": "u16713435264178",
+      "isPublish": true,
+      "updatedTime": 1671343758154,
+      "displayName": "Hachi",
+      "avatar": "https://images.unsplash.com/photo-1544717301-9cdcb1f5940f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "contact": [
+        {
+          "contactId": 1671343600959,
+          "method": "Email",
+          "account": "888@gmail.com"
+        }
+      ],
+      "summary": "我是一隻勤奮的蜜蜂",
+      "interest": "跳舞＆K-POP",
+      "goals": "沒特別的，純粹交友",
+      "preferences": "要跟我一起跳舞嗎？"
+    },
+    {
+      "id": "f16713440964109",
+      "userId": "u16713440964109",
+      "isPublish": true,
+      "updatedTime": 1671344382005,
+      "displayName": "Kyu Kyu",
+      "avatar": "../img/undraw_nature_m5ll.svg",
+      "contact": [
+        {
+          "contactId": 1671344221793,
+          "method": "Skype",
+          "account": "kyokyo@gmail.com"
+        }
+      ],
+      "summary": "I am kyu kyu. As you can guess, this is my nickname. I am looking for some friends! Let's connect!",
+      "interest": "Travel, learn 日本語",
+      "goals": "",
+      "preferences": "Let's travel together"
+    },
+    {
+      "id": "f167134458066310",
+      "userId": "u167134458066310",
+      "isPublish": true,
+      "updatedTime": 1671344764591,
+      "displayName": "レイ",
+      "avatar": "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80",
+      "contact": [
+        {
+          "contactId": 1671344684575,
+          "method": "Line",
+          "account": "rei09866"
+        }
+      ],
+      "summary": "レイです。よろしくお願いします",
+      "interest": "マンガやアニメ",
+      "goals": "英語",
+      "preferences": "誰でもいいよ〜"
     }
   ],
   "users": [
@@ -561,6 +716,124 @@
         "isPublish": false,
         "updatedTime": 1671302091143,
         "displayName": "user7",
+        "avatar": "../img/undraw_nature_m5ll.svg",
+        "contact": [],
+        "summary": "",
+        "interest": "",
+        "goals": "",
+        "preferences": ""
+      }
+    },
+    {
+      "email": "888@gmail.com",
+      "password": "$2a$10$JBXzZLgOOQO1XKJjDIDw9u.9sBj2pZIs4.4mADz7Bzxx2TPeQ4.x.",
+      "id": "u16713435264178",
+      "firstName": "Hachi",
+      "lastName": "Eight",
+      "speak": [
+        {
+          "speakId": 1671343549450,
+          "language": "Chinese",
+          "level": "★★★★"
+        },
+        {
+          "speakId": 1671345289521,
+          "language": "English",
+          "level": "★★★"
+        }
+      ],
+      "learn": [
+        {
+          "learnId": 1671343549450,
+          "language": "English",
+          "level": "★★★"
+        }
+      ],
+      "db": {
+        "username": "Bee",
+        "avatar": "https://images.unsplash.com/photo-1544717301-9cdcb1f5940f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+      },
+      "lf": {
+        "isPublish": false,
+        "updatedTime": 1671343526417,
+        "displayName": "user8",
+        "avatar": "../img/undraw_nature_m5ll.svg",
+        "contact": [],
+        "summary": "",
+        "interest": "",
+        "goals": "",
+        "preferences": ""
+      }
+    },
+    {
+      "email": "999@gmail.com",
+      "password": "$2a$10$Znum98PFJnX.bTErrcQSRe.wK22Iva26mlH8yM2bonTRqNscRVNVW",
+      "id": "u16713440964109",
+      "firstName": "Kyuu",
+      "lastName": "Nine",
+      "speak": [
+        {
+          "speakId": 1671344161978,
+          "language": "English",
+          "level": "★★★★"
+        },
+        {
+          "speakId": 1671344176055,
+          "language": "Chinese",
+          "level": "★★★"
+        }
+      ],
+      "learn": [
+        {
+          "learnId": 1671344181454,
+          "language": "Japanese",
+          "level": "★"
+        }
+      ],
+      "db": {
+        "username": "kyuuuuuuuuu",
+        "avatar": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+      },
+      "lf": {
+        "isPublish": false,
+        "updatedTime": 1671344096410,
+        "displayName": "user9",
+        "avatar": "../img/undraw_nature_m5ll.svg",
+        "contact": [],
+        "summary": "",
+        "interest": "",
+        "goals": "",
+        "preferences": ""
+      }
+    },
+    {
+      "email": "000@gmail.com",
+      "password": "$2a$10$wZrDgNC6DJ9oUwTTlOIL1uqcoHCojGICYyfwiJVf4AEbOuAfxTVty",
+      "id": "u167134458066310",
+      "firstName": "Rei",
+      "lastName": "Zero",
+      "speak": [
+        {
+          "speakId": 1671344631165,
+          "language": "Japanese",
+          "level": "★★★★"
+        }
+      ],
+      "learn": [
+        {
+          "learnId": 1671344631165,
+          "language": "English",
+          "level": "★★"
+        }
+      ],
+      "db": {
+        "username": "Rei0",
+        "avatar": "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
+      },
+      "lf": {
+        "isPublish": false,
+        "updatedTime": 1671344580663,
+        "displayName": "user10",
         "avatar": "../img/undraw_nature_m5ll.svg",
         "contact": [],
         "summary": "",
