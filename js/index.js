@@ -12,6 +12,7 @@ localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn =
 
 renderBtn();
 
+
 axios.get("http://localhost:3000/posts?_expand=user&_sort=updatedTime&_order=desc&_limit=5")
     .then(response => {
         dbData = response.data;
@@ -205,7 +206,7 @@ function renderBtn() {
             </a>
         `
 
-        endBtnGroup = `
+        endBtnGroup.innerHTML = `
             <a class="col-9 col-sm-6 col-md-5 btn btn-outline-secondary d-block mx-1 my-2 py-2 border border-2 border-secondary shadow-sm" href="../html/register.html" role="button">
                 Get Started
             </a>
