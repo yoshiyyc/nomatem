@@ -13,6 +13,8 @@ const btnUpdateLanguage = document.querySelector("#btnUpdateLanguage");
 
 let token = localStorage.getItem("token");
 let userId = localStorage.getItem("userId");
+let isLoggedIn;
+localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
 
 let userData;
 
@@ -31,6 +33,8 @@ let learnArr = [
         "level": ""
     }
 ];
+
+loggedInCheck();
 
 // Load - Get user information and render
 axios.get(`http://localhost:3000/600/users/${userId}?`, {
@@ -229,6 +233,9 @@ function renderSpeak() {
                 <option>
                     Chinese
                 </option>
+                <option>
+                    Japanese
+                </option>
             </select>
         </div>
         <div class="col-5">
@@ -326,6 +333,9 @@ function renderLearn() {
                 <option>
                     Chinese
                 </option>
+                <option>
+                    Japanese
+                </option>
             </select>
         </div>
         <div class="col-5">
@@ -387,4 +397,11 @@ function updateLanguage() {
         .catch(error => {
             console.log(error)
         });
+}
+
+function loggedInCheck() {
+    if(!isLoggedIn) {
+        alert("You are not logged in");
+        location.href = "../html/login.html";
+    }
 }

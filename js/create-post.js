@@ -7,7 +7,7 @@ const newPostAgreement = document.querySelector("#newPostAgreement");
 const createPostInfoMessage = document.querySelectorAll(".createPostInfo-message");
 const newPostBtn = document.querySelector("#newPostBtn");
 
-let token = localStorage.getItem("token");
+
 let userId = localStorage.getItem("userId");
 
 let isLoggedIn;

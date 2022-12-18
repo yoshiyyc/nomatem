@@ -92,7 +92,7 @@ export function updateNavbar() {
 
 
     /*
-    deleteUser("u16712396833441");
+    deleteUser("u16712864814564");
 
     function deleteUser(id) {
         axios.delete(`http://localhost:3000/users/${id}`)

@@ -16,6 +16,7 @@ localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn =
 let postData;
 let commentData;
 let commentNum = 0;
+let postCommentNum = 0;
 
 loggedInCheck();
 
@@ -79,9 +80,19 @@ async function createComment() {
         .catch(error => {
             console.log(error);
         });
+    
+    // Get updated comment data ()
+    await axios.get(`http://localhost:3000/comments?postId=${postId}`)
+    .then(response => {
+        commentData = response.data; 
+        postCommentNum = commentData.length;
+    })
+    .catch(error => {
+        console.log(error);
+    });
 
     await axios.patch(`http://localhost:3000/posts/${postId}`, {
-        "commentNum": commentNum + 1,
+        "commentNum": postCommentNum,
         "updatedTime": Date.now(),
     })
         .then(response => {

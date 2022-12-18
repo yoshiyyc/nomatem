@@ -4,8 +4,12 @@ const btnFilter = document.querySelector("#btnFilter");
 const friendsList = document.querySelector("#friendsList");
 
 let lfData;
+let keyProfileId;
 
-axios.get("http://localhost:3000/friends?_expand=user&_sort=updatedTime&_order=desc")
+let isLoggedIn;
+localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
+
+axios.get("http://localhost:3000/friends?_expand=user&isPublish=true&_sort=updatedTime&_order=desc")
 .then(response => {
     lfData = response.data;
     console.log(lfData);
@@ -19,6 +23,21 @@ btnFilter.addEventListener("click", e => {
     e.preventDefault();
     filterLanguage();
 });
+
+friendsList.addEventListener("click", e => {
+    e.preventDefault();
+
+    if(e.target.classList.contains("profile__link")) {
+        if(isLoggedIn) {
+            keyProfileId = e.target.dataset.profileId;
+            localStorage.setItem("profileId", keyProfileId);
+            location.href = "../html/friends-profile.html";
+        }
+        else {
+            alert("You need to log in before viewing a profile!");
+        }
+    }
+})
 
 function renderFriendsList(data) {
     friendsList.innerHTML = data.map(i => {
@@ -68,7 +87,7 @@ function renderFriendsList(data) {
                         </div>
                     </div>
                     <div class="card-footer btn-group d-flex flex-column flex-sm-row p-0 bg-transparent border-0 rounded-0" role="group" aria-label="Language Friends Buttons">
-                        <a class="col col-sm-6 btn btn-secondary d-block py-3 py-sm-2 border-0 rounded-0 rounded-bottom-start-sm" href="../html/friends-profile.html">
+                        <a class="profile__link col col-sm-6 btn btn-secondary d-block py-3 py-sm-2 border-0 rounded-0 rounded-bottom-start-sm" data-profile-id=${i.id} href="../html/friends-profile.html">
                             Profile
                         </a>
                     </div>

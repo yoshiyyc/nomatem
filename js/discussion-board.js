@@ -88,7 +88,7 @@ function renderDbTable(data) {
                     ${i.commentNum}
                 </td>
                 <td class="col-1 text-center fs-7">
-                    ${formatTime(i.postTime)}
+                    ${formatTime(i.updatedTime)}
                 </td>
             </tr>
         `;

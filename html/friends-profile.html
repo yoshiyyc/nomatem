@@ -79,15 +79,15 @@
     <main>
         <section>
             <div class="container-md my-5">
-                <div class="row d-flex justify-content-between align-items-center mb-3">
-                    <div class="col-3 d-flex justify-content-center align-items-center">
-                        <img class="friends-profile__avatar img-fluid d-block border rounded-circle"
-                            src="../img/undraw_yacht_re_kkai.svg" alt="Adam Smith">
+                <div class="row d-flex flex-column flex-sm-row justify-content-sm-center justify-content-md-between align-items-center mb-3">
+                    <div id="profileAvatarArea" class="avatar__img-container col-6 col-sm-3 d-flex justify-content-center align-items-center">
+                        
                     </div>
-                    <div class="col-9 px-5">
-                        <h2 class="my-2">
-                            Adam Smith
+                    <div class="col col-sm-6 col-md-9 px-5">
+                        <h2 id="profileName" class="my-2 text-center text-sm-start text-primary">
+                            
                         </h2>
+                        <!--
                         <div class="d-flex my-2">
                             <button class="btn btn-primary d-block py-2">
                                 Bookmark
@@ -99,11 +99,13 @@
                                 Report
                             </button>
                         </div>
+                        -->
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-3 border">
-                        <div class="py-3 border-bottom">
+                <div class="row flex-column flex-md-row">
+                    <div class="col-10 col-md-3 mx-auto mx-md-0 bg-light">
+                        <!--
+                            <div class="py-3 border-bottom">
                             <h4>
                                 Location
                             </h4>
@@ -111,6 +113,7 @@
                                 United States
                             </p>
                         </div>
+                        -->
                         <div class="py-3 border-bottom">
                             <h4>
                                 Language
@@ -119,100 +122,75 @@
                                 <p class="mb-0">
                                     Speak
                                 </p>
-                                <div class="d-flex">
-                                    <p class="col me-1 mb-0 fs-7">
-                                        Chinese
-                                    </p>
-                                    <p class="col mb-0 fs-7">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </p>
-                                </div>
-                                <div class="d-flex">
-                                    <p class="col me-1 mb-0 fs-7">
-                                        Spanish
-                                    </p>
-                                    <p class="col mb-0 fs-7">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star"></i>
-                                    </p>
-                                </div>
+                                <ul id="profileSpeak" class="d-flex flex-column list-unstyled mb-0">
+                                    <li>
+                                        <p class="col me-1 mb-0 fs-7">
+                                            
+                                        </p>
+                                        <p class="col mb-0 fs-7">
+                                            
+                                        </p>
+                                    </li>
+                                </ul>
                             </div>
                             <div class="my-2">
                                 <p class="mb-0">
                                     Learning
                                 </p>
-                                <div class="d-flex">
-                                    <p class="col me-1 mb-0 fs-7">
-                                        Japanese
-                                    </p>
-                                    <p class="col mb-0 fs-7">
-                                        <i class="bi bi-star-fill"></i>
-                                    </p>
-                                </div>
+                                <ul id="profileLearn" class="d-flex flex-column list-unstyled mb-0">
+                                    <li>
+                                        <p class="col me-1 mb-0 fs-7">
+                                            
+                                        </p>
+                                        <p class="col mb-0 fs-7">
+                                            
+                                        </p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <div class="py-3">
                             <h4>
                                 Contact Preference
                             </h4>
-                            <ul class="list-unstyled my-2">
-                                <li>
-                                    <i class="bi bi-envelope me-1"></i>
-                                    Email
-                                </li>
-                                <li>
-                                    <i class="bi bi-whatsapp me-1"></i>
-                                    WhatsApp
-                                </li>
-                                <li>
-                                    <i class="bi bi-line me-1"></i>
-                                    Line
-                                </li>
-                                <li>
-                                    <i class="bi bi-skype me-1"></i>
-                                    Skype
-                                </li>
+                            <ul id="profileContact" class="container list-unstyled my-2">
+                                
                             </ul>
                         </div>
                     </div>
-                    <div class="col-9 px-5">
+                    <div class="col-10 col-md-9 mx-auto mx-md-0 px-3 px-md-5">
                         <div class="py-3">
                             <h4>
                                 Summary
                             </h4>
-                            <p class="mb-0">
+                            <p id="profileSummaryContent" class="mb-0">
                                 I am passionate about language learning. It’ll be great if anyone’s interested in doing
                                 an English-Japanese language exchange.
                             </p>
                         </div>
                         <div class="mt-2">
                             <div class="row d-flex justify-content-between my-3 py-3">
-                                <h6 class="col-3">
+                                <h6 class="col-12 col-sm-3 h4 fs-sm-6">
                                     I am interested in
                                 </h6>
-                                <p class="col-8 mb-0">
+                                <p id="profileInterestContent" class="col-12 col-sm-8 mb-0">
                                     Cuisines, photography
                                 </p>
                             </div>
                             <div class="row d-flex justify-content-between my-3 py-3">
-                                <h6 class="col-3">
+                                <h6 class="col-12 col-sm-3 h4 fs-sm-6">
                                     My learning goals
                                 </h6>
-                                <p class="col-8 mb-0">
+                                <p id="profileGoalsContent" class="col-12 col-sm-8 mb-0">
                                     I want to be able to speak Japanese fluently, so that maybe one day I can work in
                                     Japan.
                                 </p>
                             </div>
                             <div class="row d-flex justify-content-between my-3 py-3">
-                                <h6 class="col-3">
+                                <h6 class="col-12 col-sm-3 h4 fs-sm-6">
                                     Perfect language friends for me
                                 </h6>
-                                <p class="col-8 mb-0">
+                                <p id="profilePreferencesContent" class="col-12 col-sm-8 mb-0">
                                     I am looking for someone who is around my age (20+), and will be great if we share
                                     the same hobbies!
                                 </p>
@@ -302,8 +280,10 @@
     <script type="module">
         import * as mixedImport from "../js/all.js";
 
+        mixedImport.checkLoggedIn();
         mixedImport.updateNavbar();
     </script>
+    <script src="../js/friends-profile.js"></script>
 </body>
 
 </html>

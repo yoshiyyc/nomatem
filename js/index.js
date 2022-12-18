@@ -1,8 +1,16 @@
+const bannerBtnGroup = document.querySelector("#bannerBtnGroup");
+const endBtnGroup = document.querySelector("#endBtnGroup");
 const indexDbTbody = document.querySelector("#indexDbTbody");
 const indexFriendsList = document.querySelector("#indexFriendsList");
 
 let dbData;
 let lfData;
+let keyProfileId;
+
+let isLoggedIn;
+localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
+
+renderBtn();
 
 axios.get("http://localhost:3000/posts?_expand=user&_sort=updatedTime&_order=desc&_limit=5")
     .then(response => {
@@ -13,7 +21,7 @@ axios.get("http://localhost:3000/posts?_expand=user&_sort=updatedTime&_order=des
         console.log(error);
     })
 
-axios.get("http://localhost:3000/friends?_expand=user&_sort=updatedTime&_order=desc")
+axios.get("http://localhost:3000/friends?_expand=user&isPublish=true&_sort=updatedTime&_order=desc&_limit=6")
     .then(response => {
         lfData = response.data;
         renderFriendsList();
@@ -32,6 +40,21 @@ indexDbTbody.addEventListener("click", e => {
         location.href = "../html/post.html";
     }
 });
+
+indexFriendsList.addEventListener("click", e => {
+    e.preventDefault();
+
+    if(e.target.classList.contains("profile__link")) {
+        if(isLoggedIn) {
+            keyProfileId = e.target.dataset.profileId;
+            localStorage.setItem("profileId", keyProfileId);
+            location.href = "../html/friends-profile.html";
+        }
+        else {
+            alert("You need to log in before viewing a profile!");
+        }
+    }
+})
 
 // Function - Render discussion board table
 function renderDbTable(data) {
@@ -63,7 +86,7 @@ function renderDbTable(data) {
                     ${i.commentNum}
                 </td>
                 <td class="col-1 text-center fs-7">
-                    ${formatTime(i.postTime)}
+                    ${formatTime(i.updatedTime)}
                 </td>
             </tr>
         `;
@@ -118,7 +141,7 @@ function renderFriendsList() {
                         </div>
                     </div>
                     <div class="card-footer btn-group d-flex flex-column flex-sm-row p-0 bg-transparent border-0 rounded-0" role="group" aria-label="Language Friends Buttons">
-                        <a class="col col-sm-6 btn btn-secondary d-block py-3 py-sm-2 border-0 rounded-0 rounded-bottom-start-sm" href="../html/friends-profile.html">
+                        <a class="profile__link col col-sm-6 btn btn-secondary d-block py-3 py-sm-2 border-0 rounded-0 rounded-bottom-start-sm" data-profileId=${i.id} href="../html/friends-profile.html">
                             Profile
                         </a>
                     </div>
@@ -156,4 +179,39 @@ function formatTime(timestamp) {
     let minute = dateTime.getMinutes();
 
     return `${year}/${month}/${date} ${hour <= 12 ? hour : hour - 12}:${minute.toString().padStart(2, "0")} ${hour < 12 ? "AM" : "PM"}`;
+}
+
+function renderBtn() {
+    if(isLoggedIn) {
+        bannerBtnGroup.innerHTML = `
+            <a class="col-9 col-md-5 btn btn-outline-secondary mx-0 mx-md-1 my-2 my-md-0 py-2 border border-2 border-secondary shadow-sm"
+        href="../html/discussion-board.html" role="button">
+                Discussion Board
+            </a>
+            <a class="col-9 col-md-5 btn btn-outline-tertiary mx-0 mx-md-1 my-2 my-md-0 py-2 border border-2 border-tertiary shadow-sm" href="../html/language-friends.html" role="button">
+                Language Friends
+            </a>
+        `
+
+        endBtnGroup.innerHTML = "";
+    }
+    else {
+        bannerBtnGroup.innerHTML = `
+            <a class="col-9 col-md-5 btn btn-outline-secondary mx-0 mx-md-1 my-2 my-md-0 py-2 border border-2 border-secondary shadow-sm" href="../html/register.html" role="button">
+                Get Started
+            </a>
+            <a class="col-9 col-md-5 btn btn-outline-tertiary mx-0 mx-md-1 my-2 my-md-0 py-2 border border-2 border-tertiary shadow-sm" href="../html/login.html" role="button">
+                Log In
+            </a>
+        `
+
+        endBtnGroup = `
+            <a class="col-9 col-sm-6 col-md-5 btn btn-outline-secondary d-block mx-1 my-2 py-2 border border-2 border-secondary shadow-sm" href="../html/register.html" role="button">
+                Get Started
+            </a>
+            <a class="col-9 col-sm-6 col-md-5 btn btn-outline-tertiary d-block mx-1 my-2 py-2 border border-2 border-tertiary shadow-sm" href="../html/login.html" role="button">
+                Log In
+            </a>
+        `;
+    }
 }
