@@ -1,4 +1,4 @@
 # nomatem
-![](https://imgur.com/LqwfMZo.png =250x)
+<img src="https://imgur.com/LqwfMZo" width="200">
 
 NOMATEM is a language social board built with JSON Server.
