@@ -5,14 +5,14 @@ const btnReply = document.querySelector(".btn--reply");
 
 let token = localStorage.getItem("token");
 let postId = localStorage.getItem("postId");
-
-let isLoggedIn;
-localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
 let postData;
 
+// Onload - Call function to render the page
 loadPage();
 
+// Click - Enter create reply page / show alert if not logged in
 btnReply.addEventListener("click", e => {
     e.preventDefault();
     if(isLoggedIn) {
@@ -23,9 +23,10 @@ btnReply.addEventListener("click", e => {
     }
 });
 
+// Function - Load page
 async function loadPage() {
     // Get initial post data
-    await axios.get(`http://localhost:3000/posts/${postId}`)
+    await axios.get(`https://nomatem-json-server-vercel.vercel.app/posts/${postId}`)
     .then(response => {
         postData = response.data; 
     })
@@ -34,7 +35,7 @@ async function loadPage() {
     });
 
     // Change view number
-    await axios.patch(`http://localhost:3000/posts/${postId}`, {
+    await axios.patch(`https://nomatem-json-server-vercel.vercel.app/posts/${postId}`, {
         "viewNum": postData.viewNum + 1
     })
     .then(response => {
@@ -45,7 +46,7 @@ async function loadPage() {
     })
 
     // Render page
-    await axios.get(`http://localhost:3000/posts/${postId}?_expand=user`)
+    await axios.get(`https://nomatem-json-server-vercel.vercel.app/posts/${postId}?_expand=user`)
     .then(response => {
         postData = response.data; 
         renderTitle();
@@ -56,7 +57,7 @@ async function loadPage() {
     });
 
     // Get comment data
-    await axios.get(`http://localhost:3000/comments?postId=${postId}&_expand=user`)
+    await axios.get(`https://nomatem-json-server-vercel.vercel.app/comments?postId=${postId}&_expand=user`)
     .then(response => {
         commentData = response.data; 
         renderReply();
@@ -66,10 +67,12 @@ async function loadPage() {
     });
 }
 
+// Function - Render title
 function renderTitle() {
     postTitle.innerHTML = postData.title;
 }
 
+// Function - Render op
 function renderOP() {
     originalPostArea.innerHTML = `
         <div class="row d-flex flex-column flex-sm-row border border-primary my-4">
@@ -103,6 +106,7 @@ function renderOP() {
     `;
 }
 
+// Function - Render the comments
 function renderReply() {
     replyArea.innerHTML = commentData.map(i => {
         return `
@@ -137,7 +141,7 @@ function renderReply() {
     }).join("");
 }
 
-// Function - Create new language
+// Function - Render languages
 function renderLanguage(data) {
     return data.map(i => {
         return `

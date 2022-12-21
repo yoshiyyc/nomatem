@@ -13,8 +13,7 @@ const btnUpdateLanguage = document.querySelector("#btnUpdateLanguage");
 
 let token = localStorage.getItem("token");
 let userId = localStorage.getItem("userId");
-let isLoggedIn;
-localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
 let userData;
 
@@ -34,10 +33,11 @@ let learnArr = [
     }
 ];
 
-loggedInCheck();
+// Onload - Check if the user is logged in to see this page 
+loggedInGatekeeper();
 
-// Load - Get user information and render
-axios.get(`http://localhost:3000/600/users/${userId}?`, {
+// Onload - Get user information and render
+axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}?`, {
     headers: {
         "authorization": `Bearer ${token}`,
     }
@@ -94,87 +94,11 @@ learnBody.addEventListener("click", e => {
     }
 });
 
-
 // Click - Update language fields
 btnUpdateLanguage.addEventListener("click", e => {
     e.preventDefault();
     updateLanguage();
 });
-
-
-
-function updateGeneral() {
-    axios.patch(`http://localhost:3000/600/users/${userId}?`, {
-        "firstName": generalFName.value,
-        "lastName": generalLName.value,
-        "email": generalEmail.value,
-        "password": generalPassword.value,
-    }, {
-        headers: {
-            "authorization": `Bearer ${token}`
-        }
-    })
-        .then(response => {
-            alert("Information updated!");
-        })
-        .catch(error => {
-            console.log(error)
-        });
-}
-
-
-// Function - Use validate.js to validate the form inputs
-function validateGeneralForm() {
-    let constraints = {
-        generalFName: {
-            presence: {
-                message: "^This field is required."
-            }
-        },
-        generalLName: {
-            presence: {
-                message: "^This field is required."
-            }
-        },
-        generalEmail: {
-            presence: {
-                message: "^This field is required."
-            },
-            email: {
-                message: "^This is not a valid email address."
-            }
-        },
-        generalPassword: {
-            presence: {
-                message: "^This field is required."
-            }
-        }
-    };
-
-    let errorMessage = validate(generalForm, constraints);
-
-    if (errorMessage) {
-        generalInfoMessage.forEach(i => {
-            errorMessage[i.dataset.message]
-                ? i.innerHTML = errorMessage[i.dataset.message]
-                : i.innerHTML = "";
-        });
-    }
-    else {
-        generalInfoMessage.forEach(i => {
-            i.innerHTML = "";
-        });
-        updateGeneral();
-    }
-}
-
-
-
-
-
-
-
-
 
 // Function - Add more speak fields
 function addSpeak() {
@@ -274,7 +198,6 @@ function renderSpeak() {
         }
     })
 }
-
 
 // Function - Add more learn fields
 function addLearn() {
@@ -381,7 +304,7 @@ function updateLanguage() {
     rememberLearn();
 
 
-    axios.patch(`http://localhost:3000/600/users/${userId}?`, {
+    axios.patch(`https://nomatem-json-server-vercel.vercel.app/users/${userId}?`, {
         "speak": speakArr,
         "learn": learnArr
     }, {
@@ -399,9 +322,89 @@ function updateLanguage() {
         });
 }
 
-function loggedInCheck() {
-    if(!isLoggedIn) {
-        alert("You are not logged in");
-        location.href = "../html/login.html";
+// Function - Update the account general information
+function updateGeneral() {
+    axios.patch(`https://nomatem-json-server-vercel.vercel.app/users/${userId}?`, {
+        "firstName": generalFName.value,
+        "lastName": generalLName.value,
+        "email": generalEmail.value,
+        "password": generalPassword.value,
+    }, {
+        headers: {
+            "authorization": `Bearer ${token}`
+        }
+    })
+        .then(response => {
+            alert("Information updated!");
+        })
+        .catch(error => {
+            console.log(error)
+        });
+}
+
+// Function - Use validate.js to validate the form inputs
+function validateGeneralForm() {
+    let constraints = {
+        generalFName: {
+            presence: {
+                message: "^This field is required."
+            }
+        },
+        generalLName: {
+            presence: {
+                message: "^This field is required."
+            }
+        },
+        generalEmail: {
+            presence: {
+                message: "^This field is required."
+            },
+            email: {
+                message: "^This is not a valid email address."
+            }
+        },
+        generalPassword: {
+            presence: {
+                message: "^This field is required."
+            }
+        }
+    };
+
+    let errorMessage = validate(generalForm, constraints);
+
+    if (errorMessage) {
+        generalInfoMessage.forEach(i => {
+            errorMessage[i.dataset.message]
+                ? i.innerHTML = errorMessage[i.dataset.message]
+                : i.innerHTML = "";
+        });
     }
+    else {
+        generalInfoMessage.forEach(i => {
+            i.innerHTML = "";
+        });
+        updateGeneral();
+    }
+}
+
+// Function - Only allow actions to be executed after logged in
+function loggedInGatekeeper() {
+    // Recheck login status
+    axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}`, {
+        headers: {
+            "authorization": `Bearer ${token}`,
+        }
+    })
+        .then(response => {
+            let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        })
+        .catch(error => {
+            console.log(error);
+            if(error.response.data === "jwt expired" || error.response.data === 
+            "Missing token") {
+                localStorage.setItem("isLoggedIn", false);
+            }
+            alert("You are not logged in");
+            location.href = "../html/login.html";
+        })
 }

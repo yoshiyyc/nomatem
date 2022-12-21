@@ -7,25 +7,26 @@ const newPostAgreement = document.querySelector("#newPostAgreement");
 const createPostInfoMessage = document.querySelectorAll(".createPostInfo-message");
 const newPostBtn = document.querySelector("#newPostBtn");
 
-
 let userId = localStorage.getItem("userId");
-
-let isLoggedIn;
-localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
 let postData;
 let postNum = 0;
 
-loggedInCheck();
+// Onload - Check if the user is logged in to see this page 
+loggedInGatekeeper();
 
+// Click - Create post
 newPostBtn.addEventListener("click", e => {
     e.preventDefault();
-    loggedInCheck();
+    loggedInGatekeeper();
     validateForm();
 })
 
+// Function - Create Post
 async function createPost() {
-    await axios.get("http://localhost:3000/posts")
+    // Axios - Get total post number
+    await axios.get("https://nomatem-json-server-vercel.vercel.app/posts")
         .then(response => {
             postNum = response.data.length + 1;
         })
@@ -33,9 +34,9 @@ async function createPost() {
             console.log(error);
         });
 
-    await axios.post("http://localhost:3000/posts", {
+    // Axios - Post a post
+    await axios.post("https://nomatem-json-server-vercel.vercel.app/posts", {
         "id": `p${Date.now()}${postNum}`,
-        "url": "#",
         "title": newPostTitle.value,
         "userId": userId,
         "language": newPostLanguage.value,
@@ -45,7 +46,6 @@ async function createPost() {
         "commentNum": 0,
         "thumbnailImg": newPostThumbnail.value ? newPostThumbnail.value : "../img/undraw_nature_m5ll.svg",
         "content": newPostContent.value,
-        "comments": []
     })
         .then(response => {
             postData = response.data;
@@ -103,7 +103,8 @@ function validateForm() {
     }
 }
 
-function loggedInCheck() {
+// Function - Only allow actions to be executed after logged in
+function loggedInGatekeeper() {
     if(!isLoggedIn) {
         alert("You are not logged in");
         location.href = "../html/login.html";

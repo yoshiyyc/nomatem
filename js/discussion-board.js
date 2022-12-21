@@ -3,35 +3,37 @@ const searchbarBtn = document.querySelector(".searchbar__btn")
 const btnPost = document.querySelector("#btnPost");
 const dbTbody = document.querySelector("#dbTbody");
 const dbLanguageSelect = document.querySelector("#dbLanguageSelect");
+const dbPagination = document.querySelector("#dbPagination");
+const pgLinkNumber = document.querySelectorAll(".pg__link-number");
 
 let token = localStorage.getItem("token");
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
 let dbData;
+let pgNumber = 1;
 let keyPostId;
 
-let isLoggedIn;
-localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
+// Onload - Get post data to render page
+updateDbData();
 
-axios.get("http://localhost:3000/posts?_expand=user&_sort=updatedTime&_order=desc")
-    .then(response => {
-        dbData = response.data;
-        renderDbTable(dbData);
-    })
-    .catch(error => {
-        console.log(error);
-    });
-
-
-searchbarBtn.addEventListener("click", e => {
-    searchPost();
+// Click - Filter post language
+dbLanguageSelect.addEventListener("change", e => {
+    updateDbData();
 })
 
+// Click - Search the posts using keywords
+searchbarBtn.addEventListener("click", e => {
+    updateDbData();
+})
+
+// Click (Press) - Search the posts using keywords
 discussionSearchbar.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-        searchPost();
+        updateDbData();
     }
 });
 
+// Click - Enter create post page / show alert if not logged in
 btnPost.addEventListener("click", e => {
     e.preventDefault();
     if(isLoggedIn) {
@@ -41,11 +43,6 @@ btnPost.addEventListener("click", e => {
         alert("You need to log in before posting!");
     }
 });
-
-// Click - Filter post language
-dbLanguageSelect.addEventListener("change", e => {
-    filterLanguage(dbLanguageSelect.value);
-})
 
 // Click - Enter post page
 dbTbody.addEventListener("click", e => {
@@ -57,6 +54,45 @@ dbTbody.addEventListener("click", e => {
     }
 });
 
+// Click - Choose different pages
+dbPagination.addEventListener("click", e => {
+    e.preventDefault();
+    if(e.target.classList.contains("pg__link-number")) {
+        pgLinkNumber.forEach(i => {
+            i.classList.remove("active");
+        });
+
+        e.target.classList.add("active");
+
+        pgNumber = e.target.dataset.pgNumber;
+        updateDbData();
+    }
+});
+
+// Function - Get post data to render page
+function updateDbData() {
+    if(dbLanguageSelect.value === "All") {
+        axios.get(`https://nomatem-json-server-vercel.vercel.app/posts?_expand=user&q=${discussionSearchbar.value}&_sort=updatedTime&_order=desc&_page=${pgNumber}`)
+            .then(response => {
+                dbData = response.data;
+                renderDbTable(dbData);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+    else {
+        axios.get(`https://nomatem-json-server-vercel.vercel.app/posts?_expand=user&q=${discussionSearchbar.value}&language=${dbLanguageSelect.value}&_sort=updatedTime&_order=desc&_page=${pgNumber}`)
+            .then(response => {
+                dbData = response.data;
+                renderDbTable(dbData);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+
+}
 
 // Function - Render discussion board table
 function renderDbTable(data) {
@@ -95,18 +131,6 @@ function renderDbTable(data) {
     }).join("");
 }
 
-function searchPost() {
-    axios.get(`http://localhost:3000/posts?_expand=user&q=${discussionSearchbar.value}&_sort=updatedTime&_order=desc`)
-    .then(response => {
-        dbData = response.data;
-        renderDbTable(dbData);
-    })
-    .catch(error => {
-        console.log(error);
-    });
-}
-
-
 // Function - Format timestamp to regular date & time
 function formatTime(timestamp) {
     let dateTime = new Date(timestamp);
@@ -118,21 +142,4 @@ function formatTime(timestamp) {
     let minute = dateTime.getMinutes();
 
     return `${year}/${month}/${date} ${hour <= 12 ? hour : hour - 12}:${minute.toString().padStart(2, "0")} ${hour < 12 ? "AM" : "PM"}`;
-}
-
-
-// Function - Filter post language
-function filterLanguage(language) {
-    let languageList;
-
-    if(language === "All") {
-        languageList = dbData;
-    }
-    else {
-        languageList = dbData.filter(i => {
-            return i.language === language;
-        })
-    }
-
-    renderDbTable(languageList);
 }

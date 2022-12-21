@@ -9,32 +9,33 @@ const btnCreateComment = document.querySelector("#btnCreateComment");
 let token = localStorage.getItem("token");
 let userId = localStorage.getItem("userId");
 let postId = localStorage.getItem("postId");
-
-let isLoggedIn;
-localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
 let postData;
 let commentData;
 let commentNum = 0;
 let postCommentNum = 0;
 
-loggedInCheck();
+// Onload - Check if the user is logged in to see this page 
+loggedInGatekeeper();
 
-btnCreateComment.addEventListener("click", e => {
-    e.preventDefault();
-    validateForm();
-})
-
-axios.get(`http://localhost:3000/posts/${postId}`)
+// Onload - Get OP data to render page
+axios.get(`https://nomatem-json-server-vercel.vercel.app/posts/${postId}`)
 .then(response => {
     postData = response.data;
-    console.log(postData);
     renderPage();
 })
 .catch(error => {
     console.log(error);
 })
 
+// Click - Create comments
+btnCreateComment.addEventListener("click", e => {
+    e.preventDefault();
+    validateForm();
+})
+
+// Function - Render page
 function renderPage() {
     opArea.innerHTML = `
         <p class="mb-0 fw-bold">
@@ -56,9 +57,10 @@ function formatNewLine(str) {
     return str.replace(/(?:\r\n|\r|\n)/g, "<br>");
 }
 
-
+// Function - Create comments
 async function createComment() {
-    await axios.get(`http://localhost:3000/comments`)
+    // Get the total number of comments
+    await axios.get(`https://nomatem-json-server-vercel.vercel.app/comments`)
     .then(response => {
         commentData = response.data;
         commentNum = commentData.length + 1;
@@ -67,7 +69,8 @@ async function createComment() {
         console.log(error);
     })
 
-    await axios.post(`http://localhost:3000/comments`, {
+    // Post comment
+    await axios.post(`https://nomatem-json-server-vercel.vercel.app/comments`, {
         "id": `c${Date.now()}${commentNum}`,
         "postId": postId,
         "userId": userId,
@@ -82,7 +85,7 @@ async function createComment() {
         });
     
     // Get updated comment data ()
-    await axios.get(`http://localhost:3000/comments?postId=${postId}`)
+    await axios.get(`https://nomatem-json-server-vercel.vercel.app/comments?postId=${postId}`)
     .then(response => {
         commentData = response.data; 
         postCommentNum = commentData.length;
@@ -91,7 +94,8 @@ async function createComment() {
         console.log(error);
     });
 
-    await axios.patch(`http://localhost:3000/posts/${postId}`, {
+    // Update the comment number and upted time of OP
+    await axios.patch(`https://nomatem-json-server-vercel.vercel.app/posts/${postId}`, {
         "commentNum": postCommentNum,
         "updatedTime": Date.now(),
     })
@@ -104,7 +108,6 @@ async function createComment() {
             console.log(error);
         });
 }
-
 
 // Function - Use validate.js to validate the form inputs
 function validateForm() {
@@ -124,12 +127,10 @@ function validateForm() {
             }
         }
     };
-
     
     let errorMessage = validate(commentForm, constraints);
 
     if (errorMessage) {
-        console.log(errorMessage);
         commentInfoMessage.forEach(i => {
             errorMessage[i.dataset.message] 
                 ? i.innerHTML = errorMessage[i.dataset.message]
@@ -144,8 +145,8 @@ function validateForm() {
     }
 }
 
-
-function loggedInCheck() {
+// Function - Only allow actions to be executed after logged in
+function loggedInGatekeeper() {
     if(!isLoggedIn) {
         alert("You are not logged in");
         location.href = "../html/login.html";

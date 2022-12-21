@@ -2,28 +2,26 @@ const inputLearn = document.querySelector("#inputLearn");
 const inputTeach = document.querySelector("#inputTeach");
 const btnFilter = document.querySelector("#btnFilter");
 const friendsList = document.querySelector("#friendsList");
+const lfPagination = document.querySelector("#lfPagination");
+const pgLinkNumber = document.querySelectorAll(".pg__link-number");
+
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
 let lfData;
 let keyProfileId;
+let pgNumber = 1;
+let showNum = 9; // Set how many profiles you want to see on a page
 
-let isLoggedIn;
-localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
+// Onload - Get friends data to render page
+updateLfData();
 
-axios.get("http://localhost:3000/friends?_expand=user&isPublish=true&_sort=updatedTime&_order=desc")
-.then(response => {
-    lfData = response.data;
-    console.log(lfData);
-    renderFriendsList(lfData);
-})
-.catch(error => {
-    console.log(error);
-})
-
+// Click - Filter friends post language
 btnFilter.addEventListener("click", e => {
     e.preventDefault();
     filterLanguage();
 });
 
+// Click - Enter friends profile page / show alert if not logged in
 friendsList.addEventListener("click", e => {
     e.preventDefault();
 
@@ -39,6 +37,34 @@ friendsList.addEventListener("click", e => {
     }
 })
 
+// Click - Choose different pages
+lfPagination.addEventListener("click", e => {
+    e.preventDefault();
+    if(e.target.classList.contains("pg__link-number")) {
+        pgLinkNumber.forEach(i => {
+            i.classList.remove("active");
+        });
+
+        e.target.classList.add("active");
+
+        pgNumber = e.target.dataset.pgNumber;
+        filterLanguage();
+    }
+});
+
+// Function - Get friends data to render page
+function updateLfData() {
+    axios.get(`https://nomatem-json-server-vercel.vercel.app/friends?_expand=user&isPublish=true&_sort=updatedTime&_order=desc`)
+    .then(response => {
+        lfData = response.data;
+        filterLanguage();
+    })
+    .catch(error => {
+        console.log(error);
+    });
+}
+
+// Function - Render friends list
 function renderFriendsList(data) {
     friendsList.innerHTML = data.map(i => {
         return `
@@ -87,7 +113,7 @@ function renderFriendsList(data) {
                         </div>
                     </div>
                     <div class="card-footer btn-group d-flex flex-column flex-sm-row p-0 bg-transparent border-0 rounded-0" role="group" aria-label="Language Friends Buttons">
-                        <a class="profile__link col col-sm-6 btn btn-secondary d-block py-3 py-sm-2 border-0 rounded-0 rounded-bottom-start-sm" data-profile-id=${i.id} href="../html/friends-profile.html">
+                        <a class="profile__link col col-sm-6 btn btn-secondary d-block py-3 py-sm-2 border-0 rounded-0 rounded-bottom" data-profile-id=${i.id} href="../html/friends-profile.html">
                             Profile
                         </a>
                     </div>
@@ -97,7 +123,7 @@ function renderFriendsList(data) {
     }).join("");
 }
 
-// Function - Create new language
+// Function - Render languages
 function renderLanguage(data) {
     return data.map(i => {
         return `
@@ -113,8 +139,11 @@ function renderLanguage(data) {
         }).join("");
 } 
 
+// Function - Filter friends profiles by language
 function filterLanguage() {
     let languageList;
+    let limitLow = (pgNumber - 1) * showNum;
+    let limitHigh = pgNumber * showNum - 1;
 
     languageList = lfData.filter(i => {
         let hasSpeak = false;
@@ -124,18 +153,21 @@ function filterLanguage() {
             if (inputLearn.value === j.language || inputLearn.value === "All") {
                 hasSpeak = true;
             }
-        })
+        });
 
         i.user.learn.forEach(j => {
             if (j.language === inputTeach.value || inputTeach.value === "All") {
                 hasLearn = true;
             }
-        })
+        });
 
         return hasSpeak && hasLearn;
     })
 
-    console.log("a", languageList);
+    languageList = languageList.filter((i, index) => {
+        return index >= limitLow && index <= limitHigh;
+    });
+
     renderFriendsList(languageList);
 }
 

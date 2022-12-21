@@ -8,13 +8,15 @@ let data;
 let token;
 let userId;
 
+// Click - Log in
 loginBtn.addEventListener("click", e => {
     e.preventDefault();
     validateForm();
 })
 
+// Function - Log in
 function logIn() {
-    axios.post("http://localhost:3000/login", {
+    axios.post("https://nomatem-json-server-vercel.vercel.app/login", {
         "email": loginEmail.value,
         "password": loginPassword.value
     })
@@ -22,7 +24,6 @@ function logIn() {
         data = response.data;
         token = response.data.accessToken;
         userId = response.data.user.id;
-        console.log(data);
         localStorage.setItem("token", token);
         localStorage.setItem("userId", userId);
         localStorage.setItem("isLoggedIn", true);

@@ -9,18 +9,17 @@ const profileGoalsContent = document.querySelector("#profileGoalsContent");
 const profilePreferencesContent = document.querySelector("#profilePreferencesContent");
 
 let profileId = localStorage.getItem("profileId");
-
-let isLoggedIn;
-localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
 let profileData;
 
-loggedInCheck();
+// Onload - Check if the user is logged in to see this page 
+loggedInGatekeeper();
 
-axios.get(`http://localhost:3000/friends/${profileId}?_expand=user`)
+// Onload - Get user data to render page
+axios.get(`https://nomatem-json-server-vercel.vercel.app/friends/${profileId}?_expand=user`)
 .then(response => {
     profileData = response.data;
-    console.log(profileData);
     renderProfileHeader();
     renderLanguage();
     renderProfileContact();
@@ -30,18 +29,22 @@ axios.get(`http://localhost:3000/friends/${profileId}?_expand=user`)
     console.log(error);
 })
 
+// Function - Render profile header
 function renderProfileHeader() {
+    // Render avatar
     profileAvatarArea.innerHTML = `
         <div class="col-9 border rounded-circle">
             <img class="avatar__img d-block rounded-circle" src="${profileData.avatar}" alt="${profileData.displayName}">
         </div>
     `;
 
+    // Render display name
     profileName.innerHTML = `
         ${profileData.displayName}
     `;
 }
 
+// Function - Render languages
 function renderLanguage() {
     profileSpeak.innerHTML = profileData.user.speak.map(i => {
         return `
@@ -70,6 +73,7 @@ function renderLanguage() {
     }).join("");
 }
 
+// Function - Render contacts
 function renderProfileContact() {
     profileContact.innerHTML = profileData.contact.map(i => {
         return `
@@ -86,6 +90,7 @@ function renderProfileContact() {
     }).join("");
 }
 
+// Function - Render the icons for contacts accordingly
 function renderContactIcon(method) {
     switch(method) {
         case "Email":
@@ -101,6 +106,7 @@ function renderContactIcon(method) {
     }
 }
 
+// Function - Render profile intro
 function renderProfileIntro() {
     profileSummaryContent.innerHTML = profileData.summary;
     profileInterestContent.innerHTML = profileData.interest;
@@ -108,7 +114,8 @@ function renderProfileIntro() {
     profilePreferencesContent.innerHTML = profileData.preferences;
 }
 
-function loggedInCheck() {
+// Function - Only allow actions to be executed after logged in
+function loggedInGatekeeper() {
     if(!isLoggedIn) {
         alert("You are not logged in");
         location.href = "../html/login.html";

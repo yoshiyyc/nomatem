@@ -17,6 +17,7 @@ const btnUpdateLf = document.querySelector("#btnUpdateLf");
 let token = localStorage.getItem("token");
 let userId = localStorage.getItem("userId");
 let lfId = userId.replace("u", "f");
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
 let friendsData;
 let isChecked = false;
@@ -29,31 +30,31 @@ let contactArr = [
     }
 ];
 
+// Onload - Check if the user is logged in to see this page 
+loggedInGatekeeper();
 
-axios.get(`http://localhost:3000/friends/${lfId}`)
+// Onload - Get friends data to render page
+axios.get(`https://nomatem-json-server-vercel.vercel.app/friends/${lfId}`)
     .then(response => {
         friendsData = response.data;
-        console.log(friendsData);
         isChecked = friendsData.isPublish;
         lfSummary.value = friendsData.summary;
         lfInterest.value = friendsData.interest;
         lfGoals.value = friendsData.goals;
         lfPreferences.value = friendsData.preferences;
 
-        console.log(friendsData.contact);
-
         if(friendsData.contact.length) {
             contactArr = friendsData.contact;
         }
-        renderContact();
 
+        renderContact();
         renderLf();
     })
     .catch(error => {
         console.log(error);
     })
 
-
+// Click - Publish the friends profile page
 publishArea.addEventListener("click", e => {
     isChecked = !isChecked;
     if(e.target.classList.contains("publish__switch")) {
@@ -61,29 +62,28 @@ publishArea.addEventListener("click", e => {
     };
 });
 
-// Click - Add more speak fields
+// Click - Add more contact fields
 btnContact.addEventListener("click", e => {
     addContact();
 });
 
-// Click - Delete speak fields
+// Click - Delete contact fields
 contactBody.addEventListener("click", e => {
     if (e.target.classList.contains("btn--delete")) {
         deleteContact(e.target.dataset.id);
     }
 });
 
+// Click - Update the lf information
 btnUpdateLf.addEventListener("click", e => {
     e.preventDefault();
     validateForm();
 });
 
-
+// Function - Render the lf page
 function renderLf() {
     // Render the publish part
-    let checkedContent = "";
-
-    isChecked ? checkedContent = "checked" : checkedContent = "";
+    let checkedContent = isChecked ? "checked" : "";
 
     publishArea.innerHTML = `
         <input id="publishFriend" class="publish__switch form-check-input d-block me-4" type="checkbox"
@@ -104,8 +104,9 @@ function renderLf() {
     renderContact();
 }
 
+// Function - Publish the langiage friends profile
 function publishProfile() {
-    if(isChecked === true) {
+    if(isChecked) {
         alert("Friend profile published!");
     }
     else {
@@ -113,35 +114,6 @@ function publishProfile() {
     }
 
     updateLf();
-}
-
-function updateLf() {
-    if(!lfAvatarInput.value) {
-        lfAvatarInput.setAttribute("value", "../img/undraw_nature_m5ll.svg");
-    }
-
-    rememberContact();
-
-    axios.patch(`http://localhost:3000/friends/${lfId}`, {
-        "userId": userId,
-        "isPublish": isChecked,
-        "updatedTime": Date.now(),
-        "displayName": lfName.value,
-        "avatar": lfAvatarInput.value ? lfAvatarInput.value : friendsData.avatar,
-        "contact": contactArr,
-        "summary": lfSummary.value,
-        "interest": lfInterest.value,
-        "goals": lfGoals.value,
-        "preferences": lfPreferences.value 
-        
-    })
-        .then(response => {
-            friendsData = response.data;
-            renderLf();
-        })
-        .catch(error => {
-            console.log(error)
-        });
 }
 
 // Function - Add more contact fields
@@ -233,6 +205,37 @@ function renderContact() {
     })
 }
 
+// Function - Update the lf information
+function updateLf() {
+    if(!lfAvatarInput.value) {
+        lfAvatarInput.setAttribute("value", "../img/undraw_nature_m5ll.svg");
+    }
+
+    rememberContact();
+
+    // Axios - Edit the friends profile information
+    axios.patch(`https://nomatem-json-server-vercel.vercel.app/friends/${lfId}`, {
+        "userId": userId,
+        "isPublish": isChecked,
+        "updatedTime": Date.now(),
+        "displayName": lfName.value,
+        "avatar": lfAvatarInput.value ? lfAvatarInput.value : friendsData.avatar,
+        "contact": contactArr,
+        "summary": lfSummary.value,
+        "interest": lfInterest.value,
+        "goals": lfGoals.value,
+        "preferences": lfPreferences.value 
+        
+    })
+        .then(response => {
+            friendsData = response.data;
+            renderLf();
+        })
+        .catch(error => {
+            console.log(error)
+        });
+}
+
 // Function - Use validate.js to validate the form inputs
 function validateForm() {
     let constraints = {
@@ -259,4 +262,26 @@ function validateForm() {
         updateLf();
         alert("Information updated!");
     }
+}
+
+// Function - Only allow actions to be executed after logged in
+function loggedInGatekeeper() {
+    // Recheck login status
+    axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}`, {
+        headers: {
+            "authorization": `Bearer ${token}`,
+        }
+    })
+        .then(response => {
+            let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        })
+        .catch(error => {
+            console.log(error);
+            if(error.response.data === "jwt expired" || error.response.data === 
+            "Missing token") {
+                localStorage.setItem("isLoggedIn", false);
+            }
+            alert("You are not logged in");
+            location.href = "../html/login.html";
+        })
 }

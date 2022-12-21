@@ -9,14 +9,16 @@ const registerBtn = document.querySelector("#registerBtn");
 let data;
 let userNum = 0;
 
+// Click - Register an account
 registerBtn.addEventListener("click", e => {
     e.preventDefault();
     validateForm();
 });
 
-
+// Function - Register an account
 async function registerAccount() {
-    await axios.get("http://localhost:3000/users")
+    // Axios - Get the total number of users
+    await axios.get("https://nomatem-json-server-vercel.vercel.app/users")
     .then(response => {
         userNum = response.data.length + 1;
     })
@@ -24,8 +26,8 @@ async function registerAccount() {
         console.log(error);
     });
 
-
-    await axios.post("http://localhost:3000/register", {
+    // Axios - Register an account
+    await axios.post("https://nomatem-json-server-vercel.vercel.app/register", {
         "id": `u${Date.now()}${userNum}`,
         "firstName": registerFName.value,
         "lastName": registerLName.value,
@@ -36,28 +38,17 @@ async function registerAccount() {
         "db": {
             "username": `user${userNum}`,
             "avatar": "../img/undraw_nature_m5ll.svg"
-        },
-        "lf": {
-            "isPublish": false,
-            "updatedTime": Date.now(),
-            "displayName": `user${userNum}`,
-            "avatar": "../img/undraw_nature_m5ll.svg",
-            "contact": [],
-            "summary": "",
-            "interest": "",
-            "goals": "",
-            "preferences": ""
         }
     })
     .then(response => {
         data = response.data;
-        console.log(response.data);
     })
     .catch(error => {
         console.log(error);
     });
 
-    await axios.post("http://localhost:3000/friends", {
+    // Axios - Set up the friends profile data
+    await axios.post("https://nomatem-json-server-vercel.vercel.app/friends", {
         "id": `${data.user.id.replace("u", "f")}`,
         "userId": `${data.user.id}`,
         "isPublish": false,
@@ -73,7 +64,6 @@ async function registerAccount() {
     })
     .then(response => {
         data = response.data;
-        console.log(response.data);
         alert("Successful registration!");
         registerEmail.value = "";
         registerPassword.value = "";
@@ -83,7 +73,6 @@ async function registerAccount() {
         console.log(error);
     });
 }
-
 
 // Function - Use validate.js to validate the form inputs
 function validateForm() {

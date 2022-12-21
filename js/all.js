@@ -5,8 +5,9 @@ export let userId = localStorage.getItem("userId");
 
 export let data;
 
+// Function - Check if the page is logged in or not by checking error
 export function checkLoggedIn() {
-    axios.get(`http://localhost:3000/600/users/${userId}`, {
+    axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}`, {
         headers: {
             "authorization": `Bearer ${token}`,
         }
@@ -23,12 +24,12 @@ export function checkLoggedIn() {
         })
 }
 
+// Function - Check if it's logged in or not, then render navbar accordingly
 export function updateNavbar() {
-    let isLoggedIn;
-    localStorage.getItem("isLoggedIn") === "true" ? isLoggedIn = true : isLoggedIn = false;
+    let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
     if (isLoggedIn) {
-        axios.get(`http://localhost:3000/600/users/${userId}`, {
+        axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}`, {
             headers: {
                 "authorization": `Bearer ${token}`,
             }
@@ -37,6 +38,7 @@ export function updateNavbar() {
                 data = response.data;
                 renderNavbar();
 
+                // For log out
                 const logoutBtn = document.querySelector("#logoutBtn");
                 logoutBtn.addEventListener("click", e => {
                     logoutAction();
@@ -47,11 +49,12 @@ export function updateNavbar() {
             })
     }
 
+    //***** For admin purpose *****\\
     /*
-    deleteComment(1);
+    deleteComment(c123456);
 
     function deleteComment(id) {
-        axios.delete(`http://localhost:3000/comments/${id}`)
+        axios.delete(`https://nomatem-json-server-vercel.vercel.app/comments/${id}`)
             .then(response => {
             console.log(response.data);
     })
@@ -63,10 +66,10 @@ export function updateNavbar() {
 
 
     /*
-    deletePost("p7");
+    deletePost("p123456");
 
     function deletePost(id) {
-        axios.delete(`http://localhost:3000/posts/${id}`)
+        axios.delete(`https://nomatem-json-server-vercel.vercel.app/posts/${id}`)
             .then(response => {
             console.log(response.data);
     })
@@ -77,10 +80,10 @@ export function updateNavbar() {
     */
 
     /*
-    deleteFriend("f167125961598010");
+    deleteFriend("f123456");
 
     function deleteFriend(id) {
-        axios.delete(`http://localhost:3000/friends/${id}`)
+        axios.delete(`https://nomatem-json-server-vercel.vercel.app/friends/${id}`)
             .then(response => {
             console.log(response.data);
     })
@@ -91,10 +94,10 @@ export function updateNavbar() {
     */
 
     /*
-    deleteUser("u16712864814564");
+    deleteUser("u123456");
 
     function deleteUser(id) {
-        axios.delete(`http://localhost:3000/users/${id}`)
+        axios.delete(`https://nomatem-json-server-vercel.vercel.app/users/${id}`)
             .then(response => {
             console.log(response.data);
     })
@@ -103,10 +106,9 @@ export function updateNavbar() {
     })
     }
     */
-    
-
 }
 
+// Function - Render navbar based on log in status
 export function renderNavbar() {
     navbarAccount.innerHTML = `
         <div class="nav-item dropdown">
@@ -157,6 +159,7 @@ export function renderNavbar() {
         `;
 }
 
+// Function - Execute actions when log out
 export function logoutAction() {
     localStorage.setItem("token", "");
     token = "";
@@ -164,5 +167,5 @@ export function logoutAction() {
     userId = "";
 
     checkLoggedIn();
-    location.href = "../html/index.html";
+    location.reload();
 }

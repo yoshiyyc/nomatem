@@ -7,9 +7,9 @@
       "userId": "u16712607768993",
       "language": "EN",
       "postTime": 1671261434082,
-      "updatedTime": 1671345477667,
-      "viewNum": 28,
-      "commentNum": 6,
+      "updatedTime": 1671352446390,
+      "viewNum": 125,
+      "commentNum": 7,
       "thumbnailImg": "https://images.unsplash.com/photo-1652584466378-2c7313730d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
       "content": "Hi, nice to meet you all!",
       "comments": []
@@ -50,7 +50,7 @@
       "language": "CH",
       "postTime": 1671321517338,
       "updatedTime": 1671345461192,
-      "viewNum": 4,
+      "viewNum": 5,
       "commentNum": 2,
       "thumbnailImg": "../img/undraw_nature_m5ll.svg",
       "content": "如題，這問題已經困擾我很久了\nuniversity 的前面是 u，不是應該是放 an 嗎？",
@@ -120,7 +120,7 @@
       "language": "EN",
       "postTime": 1671345104539,
       "updatedTime": 1671345104539,
-      "viewNum": 0,
+      "viewNum": 1,
       "commentNum": 0,
       "thumbnailImg": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
       "content": "Would you guys consider learning coding as learning a language?\n\nI personally will say no but my friend says its similar",
@@ -134,63 +134,26 @@
       "language": "EN",
       "postTime": 1671345426033,
       "updatedTime": 1671345426033,
-      "viewNum": 0,
+      "viewNum": 1,
       "commentNum": 0,
       "thumbnailImg": "https://plus.unsplash.com/premium_photo-1668418188837-d40b734ed6d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
       "content": "Anyone knows any good website for lyrics translation?\nI really need it!",
       "comments": []
+    },
+    {
+      "id": "p167151349238111",
+      "title": "Mol?",
+      "userId": "u167135220867411",
+      "language": "EN",
+      "postTime": 1671513492381,
+      "updatedTime": 1671513492381,
+      "viewNum": 0,
+      "commentNum": 0,
+      "thumbnailImg": "https://images.unsplash.com/photo-1523621509625-54893aa665ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "content": "Sometimes I'll hear my (Chinese-speaking) friends saying mols when they are trying describe how much the liquid is?\nDid I miss hear everything or do you really use mols as a common unit?"
     }
   ],
   "comments": [
-    {
-      "id": "c16712939660685",
-      "postId": "p16712865523722",
-      "userId": "u16712604298241",
-      "commentTime": 1671293966068,
-      "content": "我也是"
-    },
-    {
-      "id": "c16712939940286",
-      "postId": "p16712865523722",
-      "userId": "u16712604298241",
-      "commentTime": 1671293994028,
-      "content": "我也是"
-    },
-    {
-      "id": "c16712939967707",
-      "postId": "p16712865523722",
-      "userId": "u16712604298241",
-      "commentTime": 1671293996770,
-      "content": "我也是"
-    },
-    {
-      "id": "c16712939989328",
-      "postId": "p16712865523722",
-      "userId": "u16712604298241",
-      "commentTime": 1671293998932,
-      "content": "我也是"
-    },
-    {
-      "id": "c16712940131369",
-      "postId": "p16712865523722",
-      "userId": "u16712604298241",
-      "commentTime": 1671294013136,
-      "content": "我也是"
-    },
-    {
-      "id": "c167129406788610",
-      "postId": "p16712865523722",
-      "userId": "u16712604298241",
-      "commentTime": 1671294067886,
-      "content": "7"
-    },
-    {
-      "id": "c167129413169611",
-      "postId": "p16712865523722",
-      "userId": "u16712604298241",
-      "commentTime": 1671294131696,
-      "content": "Hello"
-    },
     {
       "id": "c167129416652712",
       "postId": "p16712614340821",
@@ -274,6 +237,13 @@
       "userId": "u16713435264178",
       "commentTime": 1671345477645,
       "content": "Oh yeah"
+    },
+    {
+      "id": "c167135244637520",
+      "postId": "p16712614340821",
+      "userId": "u167135220867411",
+      "commentTime": 1671352446375,
+      "content": "Hello"
     }
   ],
   "friends": [
@@ -459,6 +429,25 @@
       "interest": "マンガやアニメ",
       "goals": "英語",
       "preferences": "誰でもいいよ〜"
+    },
+    {
+      "id": "f167135220867411",
+      "userId": "u167135220867411",
+      "isPublish": true,
+      "updatedTime": 1671352362602,
+      "displayName": "aaaa",
+      "avatar": "../img/undraw_nature_m5ll.svg",
+      "contact": [
+        {
+          "contactId": 1671352309530,
+          "method": "Email",
+          "account": "aaa@gmail.com"
+        }
+      ],
+      "summary": "klasjdl",
+      "interest": "YYY",
+      "goals": "YYY",
+      "preferences": "Anyone"
     }
   ],
   "users": [
@@ -485,17 +474,6 @@
       "db": {
         "username": "Oneboy",
         "avatar": "https://images.unsplash.com/photo-1551892644-51a6e2e8fc65?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=694&q=80"
-      },
-      "lf": {
-        "isPublish": false,
-        "updatedTime": 1671260429824,
-        "displayName": "user1",
-        "avatar": "../img/undraw_nature_m5ll.svg",
-        "contact": [],
-        "summary": "",
-        "interest": "",
-        "goals": "",
-        "preferences": ""
       }
     },
     {
@@ -521,17 +499,6 @@
       "db": {
         "username": "draken",
         "avatar": "https://images.unsplash.com/photo-1512522156303-e02eda5e76e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-      },
-      "lf": {
-        "isPublish": false,
-        "updatedTime": 1671260485647,
-        "displayName": "user2",
-        "avatar": "../img/undraw_nature_m5ll.svg",
-        "contact": [],
-        "summary": "",
-        "interest": "",
-        "goals": "",
-        "preferences": ""
       }
     },
     {
@@ -557,17 +524,6 @@
       "db": {
         "username": "user3",
         "avatar": "../img/undraw_nature_m5ll.svg"
-      },
-      "lf": {
-        "isPublish": false,
-        "updatedTime": 1671260776899,
-        "displayName": "user3",
-        "avatar": "../img/undraw_nature_m5ll.svg",
-        "contact": [],
-        "summary": "",
-        "interest": "",
-        "goals": "",
-        "preferences": ""
       }
     },
     {
@@ -593,17 +549,6 @@
       "db": {
         "username": "勇",
         "avatar": "https://images.unsplash.com/photo-1517984922331-8dbaa8ffa9c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
-      },
-      "lf": {
-        "isPublish": false,
-        "updatedTime": 1671300784738,
-        "displayName": "user4",
-        "avatar": "../img/undraw_nature_m5ll.svg",
-        "contact": [],
-        "summary": "",
-        "interest": "",
-        "goals": "",
-        "preferences": ""
       }
     },
     {
@@ -634,17 +579,6 @@
       "db": {
         "username": "Gogojo",
         "avatar": "https://images.unsplash.com/photo-1542683088-abb3da334598?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1818&q=80"
-      },
-      "lf": {
-        "isPublish": false,
-        "updatedTime": 1671301592991,
-        "displayName": "user5",
-        "avatar": "../img/undraw_nature_m5ll.svg",
-        "contact": [],
-        "summary": "",
-        "interest": "",
-        "goals": "",
-        "preferences": ""
       }
     },
     {
@@ -675,17 +609,6 @@
       "db": {
         "username": "Mumu",
         "avatar": "https://images.unsplash.com/photo-1607967511753-2cb66c5cbf8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-      },
-      "lf": {
-        "isPublish": false,
-        "updatedTime": 1671301802593,
-        "displayName": "user6",
-        "avatar": "../img/undraw_nature_m5ll.svg",
-        "contact": [],
-        "summary": "",
-        "interest": "",
-        "goals": "",
-        "preferences": ""
       }
     },
     {
@@ -711,17 +634,6 @@
       "db": {
         "username": "user7",
         "avatar": "https://images.unsplash.com/photo-1543893490-4deb3431e479?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"
-      },
-      "lf": {
-        "isPublish": false,
-        "updatedTime": 1671302091143,
-        "displayName": "user7",
-        "avatar": "../img/undraw_nature_m5ll.svg",
-        "contact": [],
-        "summary": "",
-        "interest": "",
-        "goals": "",
-        "preferences": ""
       }
     },
     {
@@ -752,17 +664,6 @@
       "db": {
         "username": "Bee",
         "avatar": "https://images.unsplash.com/photo-1544717301-9cdcb1f5940f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-      },
-      "lf": {
-        "isPublish": false,
-        "updatedTime": 1671343526417,
-        "displayName": "user8",
-        "avatar": "../img/undraw_nature_m5ll.svg",
-        "contact": [],
-        "summary": "",
-        "interest": "",
-        "goals": "",
-        "preferences": ""
       }
     },
     {
@@ -793,17 +694,6 @@
       "db": {
         "username": "kyuuuuuuuuu",
         "avatar": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-      },
-      "lf": {
-        "isPublish": false,
-        "updatedTime": 1671344096410,
-        "displayName": "user9",
-        "avatar": "../img/undraw_nature_m5ll.svg",
-        "contact": [],
-        "summary": "",
-        "interest": "",
-        "goals": "",
-        "preferences": ""
       }
     },
     {
@@ -829,17 +719,36 @@
       "db": {
         "username": "Rei0",
         "avatar": "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
-      },
-      "lf": {
-        "isPublish": false,
-        "updatedTime": 1671344580663,
-        "displayName": "user10",
-        "avatar": "../img/undraw_nature_m5ll.svg",
-        "contact": [],
-        "summary": "",
-        "interest": "",
-        "goals": "",
-        "preferences": ""
+      }
+    },
+    {
+      "email": "aaa@gmail.com",
+      "password": "$2a$10$S87M2gQUPkXd46RaMGaWb.rInYTGFJ0ftm6ZlQyXYJruRDd7Pj4S.",
+      "id": "u167135220867411",
+      "firstName": "Adam",
+      "lastName": "Smith",
+      "speak": [
+        {
+          "speakId": 1671352231201,
+          "language": "Chinese",
+          "level": "★★★★"
+        },
+        {
+          "speakId": 1671352247937,
+          "language": "English",
+          "level": "★★★"
+        }
+      ],
+      "learn": [
+        {
+          "learnId": 1671352231201,
+          "language": "Japanese",
+          "level": "★"
+        }
+      ],
+      "db": {
+        "username": "adam",
+        "avatar": "https://images.unsplash.com/photo-1589952283406-b53a7d1347e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
       }
     }
   ]
