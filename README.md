@@ -1,7 +1,11 @@
 # nomatem
 <img src="https://imgur.com/LqwfMZo.png" width="300">
 
-### [>> Demo <<](https://yoshiyyc.github.io/nomatem/html/index.html)
+<img src="https://imgur.com/RN5kvBI.jpg" width="400">  
+
+  
+  
+### [>> Click to view demo <<](https://yoshiyyc.github.io/nomatem/html/index.html)
 　
 ### What Is NOMATEM?
 NOMATEM is a language-learning-focused social platform built with JSON Server. The two main services include:  
