@@ -81,8 +81,23 @@ NOMATEM 基於 JSON Server 製作的以語言交流為主題的複合式網站�
 
 * Able to filter posts based on languages or search by text
 * List post details including post language, thumbnails, post title, post author, view number, comment number, and last updated time, and sort the posts based on the last updated time
+* Display the language levels of all the users in a post
 
 　 
 * 可依語言分類文章或使用關鍵字搜尋文章
 * 列出討論區文章資訊，包含文章語言、文章縮圖、文章主題、文章作者、瀏覽數、留言數、更新時間，並以最後更新時間排序討論區文章
+* 列出文章內所有使用者的語言程度
 
+#
+
+### Posts Creation & Reply - 發文＆回覆
+<img src="https://imgur.com/tVAihKx.png" width="400">  
+
+* The user will need to fill out the post language, post title, post content, and agree to the forum rules before creating a post (Validate.js is used for empty inputs validation)
+* When commenting a post, the original post content will be shown on the page for ease to reply
+* After posting/commenting, the post details on the discussion board page will be updated (e.g. comment number, last updated time, etc.)
+
+　 
+* 使用者需填入文章語言、文章主題、文章內容，及同意板規才可發文（使用 Validate.js 檢測必填欄位）
+* 回覆文章時，原本的文章內容將會顯示在頁面上以方便針對內容回覆
+* 在發文／回覆文章後，討論板的文章資訊將會更新（例：留言數、更新時間等）
