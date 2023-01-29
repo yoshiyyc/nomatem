@@ -50,7 +50,7 @@ NOMATEM 基於 JSON Server 製作的以語言交流為主題的複合式網站�
 
 * Utilize JSON Server to mock a RESTful API and deployed the server on Vercel: https://github.com/yoshiyyc/nomatem-json-server-vercel
 * JSON data is categorized into posts, friends (info for language friends), and users
-* As JSON Server and Vercel only provide a mock environment and the data written in cannot be saved permanently (data will not be saved after users exit the site), there are some data pre-written in JSON database for demo purposes
+* As JSON Server and Vercel only provide a mock environment and the data written in cannot be saved permanently (data will not be saved after users exit the site), some data is pre-written in JSON database for demo purposes
 * Utilized Axios for API access
 
 　 
@@ -66,9 +66,23 @@ NOMATEM 基於 JSON Server 製作的以語言交流為主題的複合式網站�
 
 * Enable new users to register their information through the register form
 * Validate.js is integrated to prevent empty inputs
-* After successful registration, the users will be redirected to the login form
+* After successful registration, the users will be redirected to the login form and are able to log in using the newly registered email and password
 
 　 
 * 可讓新使用者利用註冊表單註冊使用者資訊
 * 使用 Validate.js 避免空白欄位註冊
-* 成功註冊後，使用者會被導向登入表單
+* 成功註冊後，使用者會被導向登入表單，並可使用之前註冊的使用者帳密登入
+
+
+#
+
+### Discussion Board - 討論板
+<img src="https://imgur.com/8M9b4FK.jpeg" width="400">  
+
+* Able to filter posts based on languages or search by text
+* List post details including post language, thumbnails, post title, post author, view number, comment number, and last updated time, and sort the posts based on the last updated time
+
+　 
+* 可依語言分類文章或使用關鍵字搜尋文章
+* 列出討論區文章資訊，包含文章語言、文章縮圖、文章主題、文章作者、瀏覽數、留言數、更新時間，並以最後更新時間排序討論區文章
+
