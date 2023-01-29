@@ -45,8 +45,24 @@ NOMATEM 基於 JSON Server 製作的以語言交流為主題的複合式網站�
 
 　
 ---
+### Data & API - 資料與 API 存取
+<img src="https://imgur.com/RN5kvBI.jpg" width="400"> 
+
+* Utilize JSON Server to mock a RESTful API and deployed the server on Vercel: https://github.com/yoshiyyc/nomatem-json-server-vercel
+* JSON data is categorized into posts, friends (info for language friends), and users
+* As JSON Server and Vercel only provide a mock environment and the data written in cannot be saved permanently (data will not be saved after users exit the site), there are some data pre-written in JSON database for demo purposes
+* Utilized Axios for API access
+
+　 
+* 運用 JSON Server 模擬 RESTful API，並將該 server 部署在 Vercel 上：https://github.com/yoshiyyc/nomatem-json-server-vercel
+* JSON Server 資料庫的資料被分為文章、好友（語言夥伴用的介紹）及使用者三大類
+* 由於 JSON Server 及 Vercel 僅提供模擬環境，不能永久儲存寫入資料（資料將會在使用者離開該網站後消失），在此先將預設的資料放在 JSON Server 資料庫以供展示用途
+* 使用 Axios 以串接 API
+
+#
+
 ### Register & Log In - 註冊與登入
-<img src="https://imgur.com/QdVcF9e.jpeg" width="300">  
+<img src="https://imgur.com/QdVcF9e.jpeg" width="400">  
 
 * Enable new users to register their information through the register form
 * Validate.js is integrated to prevent empty inputs
