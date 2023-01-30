@@ -76,6 +76,24 @@ NOMATEM 基於 JSON Server 製作的以語言交流為主題的複合式網站�
 
 #
 
+### Account - 帳號
+<img src="https://imgur.com/syWWh1d.png" width="400">  
+
+* Enable users to update their user information (general / discussion board / language friends) throught the forms in the account pages
+* Validate.js is integrated to prevent empty inputs of mandatory fields
+* The user can simply add or delete language / contact fields based on their situations
+* If an avatar URL is not provided, the website will automatically use default image as avatar
+
+　 
+* 可讓使用者利用帳號頁面的表單更新使用者資訊（基本、討論板、語言夥伴）
+* 使用 Validate.js 避免必填欄位空白
+* 使用者可自由依自身情況來增減語言／聯絡資訊欄位
+* 如沒有提供頭像縮圖網址，網站將會自動使用預設圖片作為頭像
+
+
+
+#
+
 ### Discussion Board - 討論板
 <img src="https://imgur.com/8M9b4FK.jpeg" width="400">  
 
