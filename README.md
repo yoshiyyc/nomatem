@@ -45,8 +45,20 @@ NOMATEM 基於 JSON Server 製作的以語言交流為主題的複合式網站�
 
 　
 ---
-### Data & API - 資料與 API 存取
+### Design - 設計
 <img src="https://imgur.com/RN5kvBI.jpg" width="400"> 
+
+* Use green and blue as main colors, which provide an impression of young and technology, and are also gender-neutral
+* Use illustrations instead of real photos, representing that the users can break the borders in reality and make friends in the online world
+
+　 
+* 使用帶有年輕和科技印象，及性別中立的綠色和藍色作為主色
+* 使用插圖代替真實圖片，象徵使用者跳脫現實框架，在線上未知的世界中遇見朋友
+
+#
+
+### Data & API - 資料與 API 存取
+<img src="https://imgur.com/hgjg5G5.png" width="400"> 
 
 * Utilize JSON Server to mock a RESTful API and deployed the server on Vercel: https://github.com/yoshiyyc/nomatem-json-server-vercel
 * JSON data is categorized into posts, friends (info for language friends), and users
@@ -110,7 +122,7 @@ NOMATEM 基於 JSON Server 製作的以語言交流為主題的複合式網站�
 
 #
 
-### Posts Creation & Reply - 發文＆回覆
+### Posts Creation & Reply - 發文與回覆
 <img src="https://imgur.com/tVAihKx.png" width="400">  
 
 * The user can only create post / comment after logging in (If the user is not logged in, he/she will be redirected to the log in page)
