@@ -27,7 +27,7 @@ async function registerAccount() {
     });
 
     // Axios - Register an account
-    await axios.post("https://nomatem-json-server-vercel.vercel.app/register", {
+    await axios.post("https://nomatem-json-server-vercel.vercel.app/users", {
         "id": `u${Date.now()}${userNum}`,
         "firstName": registerFName.value,
         "lastName": registerLName.value,
