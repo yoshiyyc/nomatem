@@ -79,30 +79,32 @@
     <main>
         <section>
             <div class="container-md">
-                <div class="row gx-5 gy-0 d-flex p-0 justify-content-between">
-                    <nav class="col-3 d-flex justify-content-center align-items-start">
-                        <ul class="nav btn-group-vertical flex-column sticky-top mt-4 me-auto" role="group"
+                <div class="row gx-0 gx-sm-5 gy-0 d-flex p-0 justify-content-between">
+                    <nav class="col-12 col-sm-3 d-flex justify-content-center align-items-start">
+                        <ul class="account-navbar row-cols-3 nav flex-md-column sticky-top mx-auto mt-4" role="group"
                             aria-label="Vertical button group">
-                            <li class="nav-item btn btn-outline-primary p-0">
+                            <li
+                                class="nav-item btn btn-outline-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link active d-block py-3 link-light text-primary"
                                     href=" ../html/account-general.html">
                                     General
                                 </a>
                             </li>
-                            <li class="nav-item btn btn-primary p-0">
+                            <li class="nav-item btn btn-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link d-block py-3 link-light" aria-current="page"
                                     href="../html/account-discussion-board.html">
                                     Discussion Board Profile
                                 </a>
                             </li>
-                            <li class="nav-item btn btn-outline-primary p-0">
+                            <li
+                                class="nav-item btn btn-outline-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link d-block py-3 link-light text-primary"
                                     href="../html/account-language-friends.html">
                                     Language Friends Profile
                                 </a>
                             </li>
                             <!--
-                            <li class="nav-item btn btn-outline-primary p-0">
+                            <li class="nav-item btn btn-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link d-block py-3 link-light text-primary"
                                     href="../html/account-friends-management.html">
                                     Language Friends Management
@@ -111,41 +113,43 @@
                             -->
                         </ul>
                     </nav>
-                    <div class="col-9 px-5 py-3">
+                    <div class="col-12 col-sm-9 px-5 py-3">
                         <div class="pt-3 pb-5">
-                            <h4 class="mb-3">
+                            <h4 class="mb-5 mb-md-3 text-center text-md-start">
                                 Discussion Board Profile
                             </h4>
                             <form id="dbForm" class="gx-5 gy-3 mb-5">
-                                <div class="row d-flex align-items-center my-2">
-                                    <div class="col-5">
+                                <div class="row d-flex flex-column flex-md-row align-items-center my-2">
+                                    <div class="col col-sm-6 mb-5">
                                         <label for="dbUsername" class="form-label">
                                             Username
                                         </label>
                                         <input id="dbUsername" class="form-control" name="dbUsername" type="text">
                                         <p class="dbInfo-message fs-7 text-danger" data-message="dbUsername">
-                                    
+
                                         </p>
                                     </div>
-                                    <div class="col-3 d-flex flex-column justify-content-center align-items-center mx-auto">
-                                        <div class="avatar__img-container d-flex">
+                                    <div class="col col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center mx-auto">
+                                        <div class="avatar__img-container col-6 col-md-12 d-flex">
                                             <div class="border rounded-circle">
                                                 <img id="dbAvatar" class="avatar__img d-block rounded-circle"
-                                                    src="../img/undraw_nature_m5ll.svg"
-                                                    alt="Avatar">
+                                                    src="../img/undraw_nature_m5ll.svg" alt="Avatar">
                                             </div>
                                         </div>
-                                        <div class="form-floating mx-auto my-3">
-                                            <input id="dbAvatarInput" type="text" class="form-control" placeholder="Image URL" value="">
+                                        <div class="col-12 col-sm-6 col-md-12 form-floating mx-auto my-3">
+                                            <input id="dbAvatarInput" type="text" class="form-control"
+                                                placeholder="Image URL" value="">
                                             <label for="dbAvatarInput" class="opacity-50">
                                                 Image URL
                                             </label>
                                         </div>
                                     </div>
+                                    
                                 </div>
-                                <div class="row my-2">
-                                    <div class="col-3 mt-5">
-                                        <button id="btnUpdateDb" class="btn btn-primary d-block py-2 w-100" type="submit">
+                                <div class="row my-3">
+                                    <div class="col-12 col-md-3 mt-5">
+                                        <button id="btnUpdateDb" class="btn btn-primary d-block py-2 w-100"
+                                            type="submit">
                                             Update
                                         </button>
                                     </div>
@@ -234,6 +238,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module">
         import * as mixedImport from "../js/all.js";
 

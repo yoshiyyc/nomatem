@@ -79,30 +79,32 @@
     <main>
         <section>
             <div class="container-md">
-                <div class="row gx-5 gy-0 d-flex p-0 justify-content-between">
-                    <nav class="col-3 d-flex justify-content-center align-items-start">
-                        <ul class="nav btn-group-vertical flex-column sticky-top mt-4 me-auto" role="group"
+                <div class="row gx-0 gx-sm-5 gy-0 d-flex p-0 justify-content-between">
+                    <nav class="col-12 col-sm-3 d-flex justify-content-center align-items-start">
+                        <ul class="account-navbar row-cols-3 nav flex-md-column sticky-top mx-auto mt-4" role="group"
                             aria-label="Vertical button group">
-                            <li class="nav-item btn btn-outline-primary p-0">
+                            <li
+                                class="nav-item btn btn-outline-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link active d-block py-3 link-light text-primary"
                                     href=" ../html/account-general.html">
                                     General
                                 </a>
                             </li>
-                            <li class="nav-item btn btn-outline-primary p-0">
+                            <li
+                                class="nav-item btn btn-outline-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link d-block py-3 link-light text-primary"
                                     href="../html/account-discussion-board.html">
                                     Discussion Board Profile
                                 </a>
                             </li>
-                            <li class="nav-item btn btn-primary p-0">
+                            <li class="nav-item btn btn-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link d-block py-3 link-light" aria-current="page"
                                     href="../html/account-language-friends.html">
                                     Language Friends Profile
                                 </a>
                             </li>
                             <!--
-                            <li class="nav-item btn btn-outline-primary p-0">
+                            <li class="nav-item btn btn-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link active d-block py-3 link-light text-primary"
                                     href="../html/account-friends-management.html">
                                     Language Friends Management
@@ -111,14 +113,15 @@
                             -->
                         </ul>
                     </nav>
-                    <div class="col-9 px-5 py-3">
+                    <div class="col-12 col-sm-9 px-5 py-3">
                         <div class="pt-3 pb-0">
                             <form id="publishForm">
                                 <h4>
                                     Language Friend Profile
                                 </h4>
                                 <div id="publishArea" class="form-check form-switch d-flex mt-4 mb-5">
-                                    <input id="publishFriend" class="publish__switch form-check-input d-block me-4" type="checkbox" role="switch">
+                                    <input id="publishFriend" class="publish__switch form-check-input d-block me-4"
+                                        type="checkbox" role="switch">
                                     <label for="publishFriend" class="form-check-label d-block">
                                         Publish my profile on the language friends list.
                                     </label>
@@ -127,28 +130,32 @@
                         </div>
                         <hr>
                         <div class="pt-3 pb-4">
-                            <form id="lfForm">
+                            <form id="lfForm" class="gx-5 gy-3 mb-5">
                                 <div class="mb-5">
-                                    <div class="row d-flex my-2">
-                                        <div class="col-5">
-                                            <label for="lfName" class="form-label h5">
+                                    <h5 class="mb-5 mb-md-3 text-start">
+                                        Display Info
+                                    </h5>
+                                    <div class="row d-flex flex-column flex-md-row align-items-center my-2">
+                                        <div class="col col-sm-6 mb-5">
+                                            <label for="lfName" class="form-label">
                                                 Display Name
                                             </label>
                                             <input id="lfName" class="form-control" name="lfName" type="text">
                                             <p class="lfInfo-message fs-7 text-danger" data-message="lfName">
-                                                
+
                                             </p>
                                         </div>
-                                        <div class="col-3 d-flex flex-column justify-content-center align-items-center mx-auto">
-                                            <div class="avatar__img-container d-flex">
+                                        <div
+                                            class="col col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center mx-auto">
+                                            <div class="avatar__img-container col-6 col-md-12 d-flex">
                                                 <div class="border rounded-circle">
                                                     <img id="lfAvatar" class="avatar__img d-block rounded-circle"
-                                                        src="../img/undraw_nature_m5ll.svg"
-                                                        alt="Avatar">
+                                                        src="../img/undraw_nature_m5ll.svg" alt="Avatar">
                                                 </div>
                                             </div>
-                                            <div class="form-floating mx-auto my-3">
-                                                <input id="lfAvatarInput" type="text" class="form-control" placeholder="Image URL" value="">
+                                            <div class="col-12 col-sm-6 col-md-12 form-floating mx-auto my-3">
+                                                <input id="lfAvatarInput" type="text" class="form-control"
+                                                    placeholder="Image URL" value="">
                                                 <label for="lfAvatarInput" class="opacity-50">
                                                     Image URL
                                                 </label>
@@ -160,53 +167,59 @@
                                     <div class="d-flex align-items-center my-2">
                                         <h5 class="mb-0">
                                             Contact Preference
-                                            <i id="btnContact" class="acc-general__btn--point btn--add bi bi-plus-circle ms-3"></i>
+                                            <i id="btnContact"
+                                                class="acc-general__btn--point btn--add bi bi-plus-circle ms-3"></i>
                                         </h5>
                                     </div>
                                     <ul id="contactBody" class="list-unstyled">
-                                        <li id="contact1" class="contact__item row d-flex align-items-center my-3">
-                                            <div class="col-5">
-                                                <select id="contactMethod1" class="form-select">
-                                                    <option selected disabled value="">
-                                                        Contact Method
-                                                    </option>
-                                                    <option>
-                                                        Email
-                                                    </option>
-                                                    <option>
-                                                        WhatsApp
-                                                    </option>
-                                                    <option>
-                                                        Telegram
-                                                    </option>
-                                                    <option>
-                                                        Line
-                                                    </option>
-                                                    <option>
-                                                        Skype
-                                                    </option>
-                                                </select>
+                                        <!--Sample, the real html will be produced by js-->
+                                        <li id="contact1"
+                                            class="contact__item row d-flex align-items-center my-4 my-md-3">
+                                            <div class="col-11 row">
+                                                <div class="col-12 col-md-6 mb-2 mb-md-0">
+                                                    <select id="contactMethod1" class="form-select">
+                                                        <option selected disabled value="">
+                                                            Contact Method
+                                                        </option>
+                                                        <option>
+                                                            Email
+                                                        </option>
+                                                        <option>
+                                                            WhatsApp
+                                                        </option>
+                                                        <option>
+                                                            Telegram
+                                                        </option>
+                                                        <option>
+                                                            Line
+                                                        </option>
+                                                        <option>
+                                                            Skype
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <input id="contactAccount1" type="text"
+                                                        class="form-control" placeholder="Contact account">
+                                                </div>
                                             </div>
-                                            <div class="col-5">
-                                                <input id="contactAccount1" type="text" class="form-control" placeholder="Contact account">
-                                            </div>
-                                            <div class="col-1 mx-auto">
-                                                <i class="btn--delete acc-general__btn--point bi bi-x-circle d-block h5 mb-0 p-0 text-center" data-id="contact1"></i>
+                                            <div class="col-1 me-auto mx-md-auto">
+                                                <i class="btn--delete acc-general__btn--point bi bi-x-circle d-block h5 mb-0 p-0 text-center"
+                                                    data-id="contact1"></i>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-11 mb-5">
+                                <div class="col col-md-11 mb-5">
                                     <div class="d-flex flex-column my-2">
                                         <label for="lfSummary" class="h5 d-block">
                                             Summary
                                         </label>
-                                        <textarea id="lfSummary" class="form-control d-block" name="lfSummary"
-                                            rows="1"
+                                        <textarea id="lfSummary" class="form-control d-block" name="lfSummary" rows="1"
                                             placeholder="Summary on our language friend profie preview."></textarea>
                                     </div>
                                 </div>
-                                <div class="mb-5 col-11">
+                                <div class="col col-md-11 mb-5">
                                     <div class="d-flex flex-column my-2">
                                         <label for="lfInterest" class="h5 d-block">
                                             I am interested in
@@ -216,17 +229,16 @@
                                             placeholder="What are you interested in? Share it with your future friends!"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-11 mb-5">
+                                <div class="col col-md-11 mb-5">
                                     <div class="d-flex flex-column my-2">
                                         <label for="lfGoals" class="h5 d-block">
                                             My learning goals
                                         </label>
-                                        <textarea id="lfGoals" class="form-control d-block" name="lfGoals"
-                                            rows="3"
+                                        <textarea id="lfGoals" class="form-control d-block" name="lfGoals" rows="3"
                                             placeholder="What are your learning goals? Share it with your future friends!"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-11 mb-5">
+                                <div class="col col-md-11 mb-5">
                                     <div class="d-flex flex-column my-2">
                                         <label for="lfPreferences" class="h5 d-block">
                                             Perfect language friends for me
@@ -236,10 +248,13 @@
                                             placeholder="Describe what you are looking for on a language friend."></textarea>
                                     </div>
                                 </div>
-                                <div class="my-5">
-                                    <button id="btnUpdateLf" class="col-3 btn btn-primary d-block mt-5 py-2" type="submit">
-                                        Update
-                                    </button>
+                                <div class="row my-3">
+                                    <div class="col-12 col-md-3 mt-5">
+                                        <button id="btnUpdateLf" class="btn btn-primary d-block py-2 w-100"
+                                            type="submit">
+                                            Update
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -325,6 +340,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module">
         import * as mixedImport from "../js/all.js";
 

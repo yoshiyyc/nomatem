@@ -79,30 +79,32 @@
     <main>
         <section>
             <div class="container-md">
-                <div class="row gx-5 gy-0 d-flex p-0 justify-content-between">
-                    <nav class="col-3 d-flex justify-content-center align-items-start">
-                        <ul class="nav btn-group-vertical flex-column sticky-top mt-4 me-auto" role="group"
+                <div class="row gx-0 gx-sm-5 gy-0 d-flex p-0 justify-content-between">
+                    <nav class="col-12 col-sm-3 d-flex justify-content-center align-items-start">
+                        <ul class="account-navbar row-cols-3 nav flex-md-column sticky-top mx-auto mt-4" role="group"
                             aria-label="Vertical button group">
-                            <li class="nav-item btn btn-primary p-0">
+                            <li class="nav-item btn btn-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link active d-block py-3 link-light" aria-current="page"
                                     href=" ../html/account-general.html">
                                     General
                                 </a>
                             </li>
-                            <li class="nav-item btn btn-outline-primary p-0">
-                                <a class="nav-link d-block py-3 link-light text-primary"
+                            <li
+                                class="nav-item btn btn-outline-primary d-flex justify-content-center align-items-center p-0">
+                                <a class="nav-link d-block py-3 link-light text-sm text-primary"
                                     href="../html/account-discussion-board.html">
                                     Discussion Board Profile
                                 </a>
                             </li>
-                            <li class="nav-item btn btn-outline-primary p-0">
+                            <li
+                                class="nav-item btn btn-outline-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link d-block py-3 link-light text-primary"
                                     href="../html/account-language-friends.html">
                                     Language Friends Profile
                                 </a>
                             </li>
                             <!--
-                            <li class="nav-item btn btn-outline-primary p-0">
+                            <li class="nav-item btn btn-primary d-flex justify-content-center align-items-center p-0">
                                 <a class="nav-link d-block py-3 link-light text-primary"
                                     href="../html/account-friends-management.html">
                                     Language Friends Management
@@ -111,56 +113,57 @@
                             -->
                         </ul>
                     </nav>
-                    <div class="col-9 px-5 py-3">
+                    <div class="col-12 col-sm-9 px-5 py-3">
                         <div class="pt-3 pb-4">
                             <h4 class="mb-3">
                                 General
                             </h4>
                             <form id="generalForm" class="g-3">
                                 <div class="row my-3">
-                                    <div class="col-5">
+                                    <div class="col-12 col-md-5 mb-3 mb-md-0">
                                         <label for="generalFName" class="form-label">
                                             First Name
                                         </label>
                                         <input id="generalFName" class="form-control" name="generalFName" type="text">
                                         <p class="generalInfo-message fs-7 text-danger" data-message="generalFName">
-                                    
+
                                         </p>
                                     </div>
-                                    <div class="col-5 offset-1">
+                                    <div class="col-12 col-md-5 offset-md-1">
                                         <label for="generalLName" class="form-label">
                                             Last name
                                         </label>
                                         <input id="generalLName" class="form-control" name="generalLName" type="text">
                                         <p class="generalInfo-message fs-7 text-danger" data-message="generalLName">
-                                    
+
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <div class="col-5">
+                                    <div class="col-12 col-md-5">
                                         <label for="generalEmail" class="form-label">
                                             Email
                                         </label>
                                         <input id="generalEmail" class="form-control" name="generalEmail" type="email">
                                         <p class="generalInfo-message fs-7 text-danger" data-message="generalEmail">
-                                    
+
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <div class="col-5">
+                                    <div class="col-12 col-md-5">
                                         <label for="generalPassword" class="form-label">
                                             Password
                                         </label>
-                                        <input id="generalPassword" class="form-control" name="generalPassword" type="password" placeholder="Password change">
+                                        <input id="generalPassword" class="form-control" name="generalPassword"
+                                            type="password" placeholder="Password change">
                                         <p class="generalInfo-message fs-7 text-danger" data-message="generalPassword">
-                                    
+
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <div class="col-3 mt-5">
+                                    <div class="col-12 col-md-3 mt-5">
                                         <button id="btnUpdateGeneral" class="btn btn-primary d-block py-2 w-100"
                                             type="submit">
                                             Update
@@ -179,15 +182,18 @@
                                     <div class="d-flex align-items-center my-2">
                                         <h5 class="mb-0">
                                             Speak
-                                            <i id="btnSpeak" class="acc-general__btn--point btn--add bi bi-plus-circle ms-3"></i>
+                                            <i id="btnSpeak"
+                                                class="acc-general__btn--point btn--add bi bi-plus-circle ms-3"></i>
                                         </h5>
                                     </div>
                                     <ul id="speakBody" class="list-unstyled">
-                                        <li id="speak1" class="speak__item row d-flex align-items-center my-3">
-                                            <div class="col-5">
+                                        <!--Sample, the real html will be produced by js-->
+                                        <li id="speak1" class="speak__item row d-flex align-items-center my-4 my-md-3">
+                                          <div class="col-11 row">
+                                            <div class="col-12 col-md-6 mb-2 mb-md-0">
                                                 <select id="generalSpeak1" class="form-select">
-                                                    <option selected disabled>
-                                                        Choose a language
+                                                    <option selected disabled value="">
+                                                        Language
                                                     </option>
                                                     <option>
                                                         English
@@ -200,85 +206,93 @@
                                                     </option>
                                                 </select>
                                             </div>
-                                            <div class="col-5">
-                                                <select id="speakLevel1" class="form-select">
-                                                    <option selected disabled value="">
-                                                        Choose a level
-                                                    </option>
-                                                    <option>
-                                                        ★★★★
-                                                    </option>
-                                                    <option>
-                                                        ★★★
-                                                    </option>
-                                                    <option>
-                                                        ★★
-                                                    </option>
-                                                    <option>
-                                                        ★
-                                                    </option>
-                                                </select>
+                                            <div class="col-12 col-md-6">
+                                              <select id="speakLevel1" class="form-select">
+                                                <option selected disabled value="">
+                                                  Level
+                                                </option>
+                                                <option>
+                                                  ★★★★
+                                                </option>
+                                                <option>
+                                                  ★★★
+                                                </option>
+                                                <option>
+                                                  ★★
+                                                </option>
+                                                <option>
+                                                  ★
+                                                </option>
+                                              </select>
                                             </div>
-                                            <div class="col-1 mx-auto">
-                                                <i class="btn--delete acc-general__btn--point bi bi-x-circle d-block h5 mb-0 p-0 text-center" data-id="speak1"></i>
-                                            </div>
-                                        </li>   
+                                          </div>
+                                          <div class="col-1 mx-auto border">
+                                              <i class="btn--delete acc-general__btn--point bi bi-x-circle d-block h5 mb-0 p-0 text-center" data-id="speak1"></i>
+                                          </div>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="mb-5">
                                     <div class="d-flex align-items-center my-2">
                                         <h5 class="mb-0">
                                             Learning
-                                            <i id="btnLearn" class="acc-general__btn--point btn--add bi bi-plus-circle ms-3"></i>
+                                            <i id="btnLearn"
+                                                class="acc-general__btn--point btn--add bi bi-plus-circle ms-3"></i>
                                         </h5>
                                     </div>
                                     <ul id="learnBody" class="list-unstyled">
-                                        <li id="learn1" class="learn__item row d-flex align-items-center my-3">
-                                            <div class="col-5">
-                                                <select id="generalLearn1" class="form-select generalLearn__select">
-                                                    <option selected disabled value="">
-                                                        Choose a language
-                                                    </option>
-                                                    <option>
-                                                        English
-                                                    </option>
-                                                    <option>
-                                                        Chinese
-                                                    </option>
-                                                    <option>
-                                                        Japanese
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="col-5">
-                                                <select id="learnLevel1" class="form-select">
-                                                    <option selected disabled value="">
-                                                        Choose a level
-                                                    </option>
-                                                    <option>
-                                                        ★★★★
-                                                    </option>
-                                                    <option>
-                                                        ★★★
-                                                    </option>
-                                                    <option>
-                                                        ★★
-                                                    </option>
-                                                    <option>
-                                                        ★
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <div class="col-1 mx-auto">
-                                                <i class="btn--delete acc-general__btn--point bi bi-x-circle d-block h5 mb-0 p-0 text-center" data-id="learn1"></i>
-                                            </div>
-                                        </li> 
+                                      <!--Sample, the real html will be produced by js-->
+                                      <li id="learn1" class="learn__item row d-flex align-items-center my-4 my-md-3">
+                                        <div class="col-11 row">
+                                          <div class="col-12 col-md-6 mb-2 mb-md-0">
+                                              <select id="generalLearn1" class="form-select">
+                                                  <option selected disabled value="">
+                                                      Language
+                                                  </option>
+                                                  <option>
+                                                      English
+                                                  </option>
+                                                  <option>
+                                                      Chinese
+                                                  </option>
+                                                  <option>
+                                                      Japanese
+                                                  </option>
+                                              </select>
+                                          </div>
+                                          <div class="col-12 col-md-6">
+                                            <select id="learnLevel1" class="form-select">
+                                              <option selected disabled value="">
+                                                Level
+                                              </option>
+                                              <option>
+                                                ★★★★
+                                              </option>
+                                              <option>
+                                                ★★★
+                                              </option>
+                                              <option>
+                                                ★★
+                                              </option>
+                                              <option>
+                                                ★
+                                              </option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                        <div class="col-1 mx-auto">
+                                            <i class="btn--delete acc-general__btn--point bi bi-x-circle d-block h5 mb-0 p-0 text-center" data-id="learn1"></i>
+                                        </div>
+                                      </li>
                                     </ul>
                                 </div>
-                                <div class="my-5">
-                                    <button id="btnUpdateLanguage" class="col-3 btn btn-primary d-block mt-5 py-2" type="submit">
-                                        Update
-                                    </button>
+                                <div class="row my-3">
+                                  <div class="col-12 col-md-3 mt-5">
+                                      <button id="btnUpdateLanguage" class="btn btn-primary d-block py-2 w-100"
+                                          type="submit">
+                                          Update
+                                      </button>
+                                  </div>
                                 </div>
                             </form>
                         </div>
@@ -364,6 +378,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module">
         import * as mixedImport from "../js/all.js";
 
