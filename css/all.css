@@ -11878,6 +11878,86 @@ textarea.form-control-lg {
   height: 175px;
 }
 
+.account-navbar {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  border-radius: 0.375rem;
+}
+
+.account-navbar > .btn {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.account-navbar > :not(.btn-check:first-child) + .btn,
+.account-navbar > .btn-group:not(:first-child) {
+  margin-left: -1px;
+}
+
+.account-navbar > .btn:not(:last-child):not(.dropdown-toggle),
+.account-navbar > .btn.dropdown-toggle-split:first-child,
+.account-navbar > .btn-group:not(:last-child) > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.account-navbar > .btn:nth-child(n + 3),
+.account-navbar > :not(.btn-check) + .btn,
+.account-navbar > .btn-group:not(:first-child) > .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.account-navbar > .btn-check:checked + .btn,
+.account-navbar > .btn-check:focus + .btn,
+.account-navbar > .btn:hover,
+.account-navbar > .btn:focus,
+.account-navbar > .btn:active,
+.account-navbar > .btn.active {
+  z-index: 1;
+}
+
+@media (min-width: 576px) {
+  .account-navbar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .account-navbar > .btn,
+  .account-navbar > .btn-group {
+    width: 100%;
+    border-radius: 0px;
+  }
+  .account-navbar > .btn:not(:first-child),
+  .account-navbar > .btn-group:not(:first-child) {
+    margin-top: -1px;
+  }
+  .account-navbar > :not(.btn-check:first-child) + .btn,
+  .account-navbar > .btn-group:not(:first-child) {
+    margin-left: 0;
+  }
+  .account-navbar > .btn:first-child:not(.dropdown-toggle) {
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+  }
+  .account-navbar > .btn:last-child:not(.dropdown-toggle) {
+    border-bottom-right-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+  }
+}
+
 .acc-general__btn--point:hover {
   cursor: pointer;
 }
