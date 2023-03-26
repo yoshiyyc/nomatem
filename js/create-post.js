@@ -49,8 +49,15 @@ async function createPost() {
     })
         .then(response => {
             postData = response.data;
-            alert("Congratulations! You have created a post");
-            location.href = "../html/discussion-board.html";
+            Swal.fire({
+                title: "Congratulations",
+                text: "You have created a post!",
+                icon: "success",
+                confirmButtonText: "OK"
+            })
+                .then((result) => {
+                    location.href = "../html/discussion-board.html";
+                });
         })
         .catch(error => {
             console.log(error);
@@ -105,8 +112,14 @@ function validateForm() {
 
 // Function - Only allow actions to be executed after logged in
 function loggedInGatekeeper() {
-    if(!isLoggedIn) {
-        alert("You are not logged in");
-        location.href = "../html/login.html";
+    if (!isLoggedIn) {
+        Swal.fire({
+            title: "You are not logged in",
+            icon: "warning",
+            confirmButtonText: "Log In"
+        })
+        .then((result) => {
+            location.href = "../html/login.html";
+        });
     }
 }

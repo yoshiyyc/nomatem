@@ -15,7 +15,7 @@ let userData;
 loggedInGatekeeper();
 
 // Onload - Get user data to render page
-axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}?`, {
+axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}`, {
     headers: {
         "authorization": `Bearer ${token}`,
     }
@@ -45,14 +45,14 @@ function renderDb() {
 
 // Function - Write in the input values into db.json
 function updateDb() {
-    if(!dbAvatarInput.value) {
+    if (!dbAvatarInput.value) {
         dbAvatarInput.setAttribute("value", "../img/undraw_nature_m5ll.svg");
     }
 
     axios.patch(`https://nomatem-json-server-vercel.vercel.app/users/${userId}`, {
         "db": {
             "username": dbUsername.value,
-            "avatar": dbAvatarInput.value ? dbAvatarInput.value : userData.db.avatar 
+            "avatar": dbAvatarInput.value ? dbAvatarInput.value : userData.db.avatar
         }
     }, {
         headers: {
@@ -60,9 +60,16 @@ function updateDb() {
         }
     })
         .then(response => {
-            alert("Information updated!");
-            renderDb();
-            location.href = "../html/account-discussion-board.html";
+            Swal.fire({
+                title: 'Information updated!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            })
+                .then((result) => {
+                    renderDb();
+                    location.href = "../html/account-discussion-board.html";
+                });
+
         })
         .catch(error => {
             console.log(error)
@@ -83,7 +90,7 @@ function validateForm() {
 
     if (errorMessage) {
         dbInfoMessage.forEach(i => {
-            errorMessage[i.dataset.message] 
+            errorMessage[i.dataset.message]
                 ? i.innerHTML = errorMessage[i.dataset.message]
                 : i.innerHTML = "";
         });
@@ -98,22 +105,14 @@ function validateForm() {
 
 // Function - Only allow actions to be executed after logged in
 function loggedInGatekeeper() {
-    // Recheck login status
-    axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}`, {
-        headers: {
-            "authorization": `Bearer ${token}`,
-        }
-    })
-        .then(response => {
-            let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (!isLoggedIn) {
+        Swal.fire({
+            title: "You are not logged in",
+            icon: "warning",
+            confirmButtonText: "Log In"
         })
-        .catch(error => {
-            console.log(error);
-            if(error.response.data === "jwt expired" || error.response.data === 
-            "Missing token") {
-                localStorage.setItem("isLoggedIn", false);
-            }
-            alert("You are not logged in");
+        .then((result) => {
             location.href = "../html/login.html";
-        })
+        });
+    }
 }

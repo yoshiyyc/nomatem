@@ -43,7 +43,7 @@ axios.get(`https://nomatem-json-server-vercel.vercel.app/friends/${lfId}`)
         lfGoals.value = friendsData.goals;
         lfPreferences.value = friendsData.preferences;
 
-        if(friendsData.contact.length) {
+        if (friendsData.contact.length) {
             contactArr = friendsData.contact;
         }
 
@@ -57,7 +57,7 @@ axios.get(`https://nomatem-json-server-vercel.vercel.app/friends/${lfId}`)
 // Click - Publish the friends profile page
 publishArea.addEventListener("click", e => {
     isChecked = !isChecked;
-    if(e.target.classList.contains("publish__switch")) {
+    if (e.target.classList.contains("publish__switch")) {
         publishProfile();
     };
 });
@@ -106,11 +106,20 @@ function renderLf() {
 
 // Function - Publish the langiage friends profile
 function publishProfile() {
-    if(isChecked) {
-        alert("Friend profile published!");
+    if (isChecked) {
+        Swal.fire({
+            title: "Friend profile published!",
+            icon: "success",
+            confirmButtonText: "OK"
+          });
     }
     else {
-        alert("Friend profile closed!");
+        Swal.fire({
+            title: "Friend profile closed!",
+            icon: "warning",
+            confirmButtonText: "OK"
+          });
+        
     }
 
     updateLf();
@@ -161,37 +170,39 @@ function rememberContact() {
 function renderContact() {
     contactBody.innerHTML = contactArr.map(i => {
         return `
-            <li id="contact${i.contactId}" class="contact__item row d-flex align-items-center my-3">
-                <div class="col-5">
-                    <select id="contactMethod${i.contactId}" class="form-select">
-                        <option selected disabled value="">
-                            Contact Method
-                        </option>
-                        <option>
-                            Email
-                        </option>
-                        <option>
-                            WhatsApp
-                        </option>
-                        <option>
-                            Telegram
-                        </option>
-                        <option>
-                            Line
-                        </option>
-                        <option>
-                            Skype
-                        </option>
-                    </select>
+            <li id="contact${i.contactId}" class="contact__item row d-flex align-items-center my-4 my-md-3">
+                <div class="col-11 row">
+                    <div class="col-12 col-md-6 mb-2 mb-md-0">
+                        <select id="contactMethod${i.contactId}" class="form-select">
+                            <option selected disabled value="">
+                                Contact Method
+                            </option>
+                            <option>
+                                Email
+                            </option>
+                            <option>
+                                WhatsApp
+                            </option>
+                            <option>
+                                Telegram
+                            </option>
+                            <option>
+                                Line
+                            </option>
+                            <option>
+                                Skype
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <input id="contactAccount${i.contactId}" type="text" class="form-control" placeholder="Contact account">
+                    </div>
                 </div>
-                <div class="col-5">
-                    <input id="contactAccount${i.contactId}" type="text" class="form-control" placeholder="Contact account">
-                </div>
-                <div class="col-1 mx-auto">
+                <div class="col-1 me-auto mx-md-auto">
                     <i class="btn--delete acc-general__btn--point bi bi-x-circle d-block h5 mb-0 p-0 text-center" data-id="contact${i.contactId}"></i>
                 </div>
             </li>
-        `
+        `;
     }).join("");
 
     contactArr.forEach(i => {
@@ -207,7 +218,7 @@ function renderContact() {
 
 // Function - Update the lf information
 function updateLf() {
-    if(!lfAvatarInput.value) {
+    if (!lfAvatarInput.value) {
         lfAvatarInput.setAttribute("value", "../img/undraw_nature_m5ll.svg");
     }
 
@@ -224,8 +235,8 @@ function updateLf() {
         "summary": lfSummary.value,
         "interest": lfInterest.value,
         "goals": lfGoals.value,
-        "preferences": lfPreferences.value 
-        
+        "preferences": lfPreferences.value
+
     })
         .then(response => {
             friendsData = response.data;
@@ -250,7 +261,7 @@ function validateForm() {
 
     if (errorMessage) {
         lfInfoMessage.forEach(i => {
-            errorMessage[i.dataset.message] 
+            errorMessage[i.dataset.message]
                 ? i.innerHTML = errorMessage[i.dataset.message]
                 : i.innerHTML = "";
         });
@@ -260,28 +271,27 @@ function validateForm() {
             i.innerHTML = "";
         });
         updateLf();
-        alert("Information updated!");
+        Swal.fire({
+            title: 'Information updated!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        })
+            .then((result) => {
+                location.href = "../html/account-language-friends.html";
+            });
     }
 }
 
 // Function - Only allow actions to be executed after logged in
 function loggedInGatekeeper() {
-    // Recheck login status
-    axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}`, {
-        headers: {
-            "authorization": `Bearer ${token}`,
-        }
-    })
-        .then(response => {
-            let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (!isLoggedIn) {
+        Swal.fire({
+            title: "You are not logged in",
+            icon: "warning",
+            confirmButtonText: "Log In"
         })
-        .catch(error => {
-            console.log(error);
-            if(error.response.data === "jwt expired" || error.response.data === 
-            "Missing token") {
-                localStorage.setItem("isLoggedIn", false);
-            }
-            alert("You are not logged in");
+        .then((result) => {
             location.href = "../html/login.html";
-        })
+        });
+    }
 }

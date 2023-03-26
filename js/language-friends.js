@@ -32,7 +32,15 @@ friendsList.addEventListener("click", e => {
             location.href = "../html/friends-profile.html";
         }
         else {
-            alert("You need to log in before viewing a profile!");
+            Swal.fire({
+                title: "Log In Needed",
+                text: "You need to log in before viewing a profile!",
+                icon: "warning",
+                confirmButtonText: "Log In",
+            })
+            .then((result) => {
+                location.href = "../html/login.html";
+            });
         }
     }
 })

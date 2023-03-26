@@ -19,7 +19,15 @@ btnReply.addEventListener("click", e => {
         location.href = "../html/reply-post.html";
     }
     else {
-        alert("You need to log in before posting!");
+        Swal.fire({
+            title: "Log In Needed",
+            text: "You need to log in before replying a post!",
+            icon: "warning",
+            confirmButtonText: "Log In",
+        })
+        .then((result) => {
+            location.href = "../html/login.html";
+        });
     }
 });
 

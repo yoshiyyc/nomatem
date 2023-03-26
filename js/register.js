@@ -27,7 +27,7 @@ async function registerAccount() {
     });
 
     // Axios - Register an account
-    await axios.post("https://nomatem-json-server-vercel.vercel.app/users", {
+    await axios.post("https://nomatem-json-server-vercel.vercel.app/register", {
         "id": `u${Date.now()}${userNum}`,
         "firstName": registerFName.value,
         "lastName": registerLName.value,
@@ -64,10 +64,16 @@ async function registerAccount() {
     })
     .then(response => {
         data = response.data;
-        alert("Successful registration!");
-        registerEmail.value = "";
-        registerPassword.value = "";
-        location.href = "../html/login.html"
+        Swal.fire({
+            title: 'Successful registration!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          })
+            .then((result) => {
+                registerEmail.value = "";
+                registerPassword.value = "";
+                location.href = "../html/login.html";
+            });
     })
     .catch(error => {
         console.log(error);

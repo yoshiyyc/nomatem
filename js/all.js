@@ -2,26 +2,39 @@ export const navbarAccount = document.querySelector("#navbarAccount");
 
 export let token = localStorage.getItem("token");
 export let userId = localStorage.getItem("userId");
+export let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
 export let data;
 
 // Function - Check if the page is logged in or not by checking error
 export function checkLoggedIn() {
-    axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}`, {
-        headers: {
-            "authorization": `Bearer ${token}`,
-        }
-    })
-        .then(response => {
-            localStorage.setItem("isLoggedIn", true);
-        })
-        .catch(error => {
-            console.log(error);
-            if(error.response.data === "jwt expired" || error.response.data === 
-            "Missing token") {
-                localStorage.setItem("isLoggedIn", false);
+    console.log("isLoggedIn: ", isLoggedIn, "userId", userId, "token: ", token);
+    if (userId && token) {
+        console.log("Enter");
+        localStorage.setItem("isLoggedIn", true);
+        axios.get(`https://nomatem-json-server-vercel.vercel.app/users/${userId}`, {
+            headers: {
+                "authorization": `Bearer ${token}`,
             }
         })
+            .then(response => {
+                console.log("yes", response);
+            })
+            .catch(error => {
+                console.log("no");
+                console.log(error);
+                if (error.response.data === "jwt expired" || error.response.data ===
+                    "Missing token") {
+                    localStorage.setItem("isLoggedIn", false);
+                    updateNavbar();
+                }
+            })
+    }
+    else {
+        console.log("no");
+        localStorage.setItem("isLoggedIn", false);
+        
+    }
 }
 
 // Function - Check if it's logged in or not, then render navbar accordingly
@@ -66,7 +79,7 @@ export function updateNavbar() {
 
 
     /*
-    deletePost("p123456");
+    deletePost("p167981921793113");
 
     function deletePost(id) {
         axios.delete(`https://nomatem-json-server-vercel.vercel.app/posts/${id}`)
@@ -78,6 +91,7 @@ export function updateNavbar() {
     })
     }
     */
+    
 
     /*
     deleteFriend("f123456");
@@ -106,6 +120,7 @@ export function updateNavbar() {
     })
     }
     */
+    
 }
 
 // Function - Render navbar based on log in status
@@ -161,11 +176,14 @@ export function renderNavbar() {
 
 // Function - Execute actions when log out
 export function logoutAction() {
+    console.dir(localStorage);
     localStorage.setItem("token", "");
     token = "";
     localStorage.setItem("userId", "");
     userId = "";
+    console.dir(localStorage);
 
+    localStorage.setItem("isLoggedIn", false);
     checkLoggedIn();
     location.reload();
 }

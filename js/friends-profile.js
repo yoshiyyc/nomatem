@@ -116,8 +116,14 @@ function renderProfileIntro() {
 
 // Function - Only allow actions to be executed after logged in
 function loggedInGatekeeper() {
-    if(!isLoggedIn) {
-        alert("You are not logged in");
-        location.href = "../html/login.html";
+    if (!isLoggedIn) {
+        Swal.fire({
+            title: "You are not logged in",
+            icon: "warning",
+            confirmButtonText: "Log In"
+        })
+        .then((result) => {
+            location.href = "../html/login.html";
+        });
     }
 }

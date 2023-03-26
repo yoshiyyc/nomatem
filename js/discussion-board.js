@@ -40,7 +40,16 @@ btnPost.addEventListener("click", e => {
         location.href = "../html/create-post.html";
     }
     else {
-        alert("You need to log in before posting!");
+        // alert("You need to log in before posting!");
+        Swal.fire({
+            title: "Log In Needed",
+            text: "You need to log in before posting!",
+            icon: "warning",
+            confirmButtonText: "Log In"
+          })
+            .then((result) => {
+              location.href = "../html/login.html";
+            });
     }
 });
 

@@ -101,8 +101,15 @@ async function createComment() {
     })
         .then(response => {
             postData = response.data;
-            alert("Congratulations! You have made a comment");
-            location.href = `../html/post.html`;
+            Swal.fire({
+                title: "Congratulations",
+                text: "You have made a comment!",
+                icon: "success",
+                confirmButtonText: "OK"
+            })
+                .then((result) => {
+                    location.href = `../html/post.html`;
+                });
         })
         .catch(error => {
             console.log(error);
@@ -147,8 +154,14 @@ function validateForm() {
 
 // Function - Only allow actions to be executed after logged in
 function loggedInGatekeeper() {
-    if(!isLoggedIn) {
-        alert("You are not logged in");
-        location.href = "../html/login.html";
+    if (!isLoggedIn) {
+        Swal.fire({
+            title: "You are not logged in",
+            icon: "warning",
+            confirmButtonText: "Log In"
+        })
+        .then((result) => {
+            location.href = "../html/login.html";
+        });
     }
 }
